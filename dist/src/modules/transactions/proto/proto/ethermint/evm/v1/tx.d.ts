@@ -1,10 +1,8 @@
-/// <reference types="node" />
 import * as dependency_3 from "./../../../google/protobuf/any";
 import * as dependency_5 from "./evm";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace ethermint.evm.v1 {
-    export class MsgEthereumTx extends pb_1.Message {
+    class MsgEthereumTx extends pb_1.Message {
         constructor(data?: any[] | {
             data?: dependency_3.google.protobuf.Any;
             size?: number;
@@ -40,7 +38,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgEthereumTx;
     }
-    export class LegacyTx extends pb_1.Message {
+    class LegacyTx extends pb_1.Message {
         constructor(data?: any[] | {
             nonce?: number;
             gas_price?: string;
@@ -98,7 +96,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): LegacyTx;
     }
-    export class AccessListTx extends pb_1.Message {
+    class AccessListTx extends pb_1.Message {
         constructor(data?: any[] | {
             chain_id?: string;
             nonce?: number;
@@ -169,7 +167,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): AccessListTx;
     }
-    export class DynamicFeeTx extends pb_1.Message {
+    class DynamicFeeTx extends pb_1.Message {
         constructor(data?: any[] | {
             chain_id?: string;
             nonce?: number;
@@ -245,7 +243,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): DynamicFeeTx;
     }
-    export class ExtensionOptionsEthereumTx extends pb_1.Message {
+    class ExtensionOptionsEthereumTx extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): ExtensionOptionsEthereumTx;
         toObject(): {};
@@ -255,7 +253,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): ExtensionOptionsEthereumTx;
     }
-    export class MsgEthereumTxResponse extends pb_1.Message {
+    class MsgEthereumTxResponse extends pb_1.Message {
         constructor(data?: any[] | {
             hash?: string;
             logs?: dependency_5.ethermint.evm.v1.Log[];
@@ -303,31 +301,4 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgEthereumTxResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedMsgService {
-        static definition: {
-            EthereumTx: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgEthereumTx) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgEthereumTx;
-                responseSerialize: (message: MsgEthereumTxResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgEthereumTxResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract EthereumTx(call: grpc_1.ServerUnaryCall<MsgEthereumTx, MsgEthereumTxResponse>, callback: grpc_1.sendUnaryData<MsgEthereumTxResponse>): void;
-    }
-    const MsgClient_base: grpc_1.ServiceClientConstructor;
-    export class MsgClient extends MsgClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        EthereumTx: GrpcUnaryServiceInterface<MsgEthereumTx, MsgEthereumTxResponse>;
-    }
-    export {};
 }

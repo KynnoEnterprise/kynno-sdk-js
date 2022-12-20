@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -32,8 +28,6 @@ var dependency_3 = _interopRequireWildcard(require("./nft"));
 var dependency_4 = _interopRequireWildcard(require("./../../cosmos/base/query/v1beta1/pagination"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1533,151 +1527,5 @@ exports.kynno = kynno;
     }(pb_1.Message);
 
     _nft.QueryNFTResponse = QueryNFTResponse;
-
-    var UnimplementedQueryService = function UnimplementedQueryService() {
-      (0, _classCallCheck2["default"])(this, UnimplementedQueryService);
-    };
-
-    (0, _defineProperty2["default"])(UnimplementedQueryService, "definition", {
-      Supply: {
-        path: "/kynno.nft.Query/Supply",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return QuerySupplyRequest.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return QuerySupplyResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      Owner: {
-        path: "/kynno.nft.Query/Owner",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return QueryOwnerRequest.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return QueryOwnerResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      Collection: {
-        path: "/kynno.nft.Query/Collection",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return QueryCollectionRequest.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return QueryCollectionResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      Denom: {
-        path: "/kynno.nft.Query/Denom",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return QueryDenomRequest.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return QueryDenomResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      Denoms: {
-        path: "/kynno.nft.Query/Denoms",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return QueryDenomsRequest.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return QueryDenomsResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      NFT: {
-        path: "/kynno.nft.Query/NFT",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return QueryNFTRequest.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return QueryNFTResponse.deserialize(new Uint8Array(bytes));
-        }
-      }
-    });
-    _nft.UnimplementedQueryService = UnimplementedQueryService;
-
-    var QueryClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-      (0, _inherits2["default"])(QueryClient, _grpc_1$makeGenericCl);
-
-      var _super13 = _createSuper(QueryClient);
-
-      function QueryClient(address, credentials, _options) {
-        var _thisSuper, _thisSuper2, _thisSuper3, _thisSuper4, _thisSuper5, _thisSuper6, _this21;
-
-        (0, _classCallCheck2["default"])(this, QueryClient);
-        _this21 = _super13.call(this, address, credentials, _options);
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this21), "Supply", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this21), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Supply", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this21), "Owner", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this21), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Owner", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this21), "Collection", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this21), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Collection", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this21), "Denom", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper4 = (0, _assertThisInitialized2["default"])(_this21), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Denom", _thisSuper4).call(_thisSuper4, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this21), "Denoms", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper5 = (0, _assertThisInitialized2["default"])(_this21), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Denoms", _thisSuper5).call(_thisSuper5, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this21), "NFT", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper6 = (0, _assertThisInitialized2["default"])(_this21), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "NFT", _thisSuper6).call(_thisSuper6, message, metadata, options, callback);
-        });
-        return _this21;
-      }
-
-      return QueryClient;
-    }(grpc_1.makeGenericClientConstructor(UnimplementedQueryService.definition, "Query", {}));
-
-    _nft.QueryClient = QueryClient;
   })(nft || (nft = _kynno.nft || (_kynno.nft = {})));
 })(kynno || (exports.kynno = kynno = {}));

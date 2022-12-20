@@ -1,13 +1,11 @@
-/// <reference types="node" />
 import * as dependency_2 from "./../../../../google/protobuf/any";
 import * as dependency_4 from "./../../../../tendermint/p2p/types";
 import * as dependency_5 from "./../../../../tendermint/types/block";
 import * as dependency_6 from "./../../../../tendermint/types/types";
 import * as dependency_7 from "./../../query/v1beta1/pagination";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace cosmos.base.tendermint.v1beta1 {
-    export class GetValidatorSetByHeightRequest extends pb_1.Message {
+    class GetValidatorSetByHeightRequest extends pb_1.Message {
         constructor(data?: any[] | {
             height?: number;
             pagination?: dependency_7.cosmos.base.query.v1beta1.PageRequest;
@@ -36,7 +34,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetValidatorSetByHeightRequest;
     }
-    export class GetValidatorSetByHeightResponse extends pb_1.Message {
+    class GetValidatorSetByHeightResponse extends pb_1.Message {
         constructor(data?: any[] | {
             block_height?: number;
             validators?: Validator[];
@@ -75,7 +73,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetValidatorSetByHeightResponse;
     }
-    export class GetLatestValidatorSetRequest extends pb_1.Message {
+    class GetLatestValidatorSetRequest extends pb_1.Message {
         constructor(data?: any[] | {
             pagination?: dependency_7.cosmos.base.query.v1beta1.PageRequest;
         });
@@ -99,7 +97,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetLatestValidatorSetRequest;
     }
-    export class GetLatestValidatorSetResponse extends pb_1.Message {
+    class GetLatestValidatorSetResponse extends pb_1.Message {
         constructor(data?: any[] | {
             block_height?: number;
             validators?: Validator[];
@@ -138,7 +136,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetLatestValidatorSetResponse;
     }
-    export class Validator extends pb_1.Message {
+    class Validator extends pb_1.Message {
         constructor(data?: any[] | {
             address?: string;
             pub_key?: dependency_2.google.protobuf.Any;
@@ -174,7 +172,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): Validator;
     }
-    export class GetBlockByHeightRequest extends pb_1.Message {
+    class GetBlockByHeightRequest extends pb_1.Message {
         constructor(data?: any[] | {
             height?: number;
         });
@@ -192,7 +190,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetBlockByHeightRequest;
     }
-    export class GetBlockByHeightResponse extends pb_1.Message {
+    class GetBlockByHeightResponse extends pb_1.Message {
         constructor(data?: any[] | {
             block_id?: dependency_6.tendermint.types.BlockID;
             block?: dependency_5.tendermint.types.Block;
@@ -413,7 +411,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetBlockByHeightResponse;
     }
-    export class GetLatestBlockRequest extends pb_1.Message {
+    class GetLatestBlockRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetLatestBlockRequest;
         toObject(): {};
@@ -423,7 +421,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetLatestBlockRequest;
     }
-    export class GetLatestBlockResponse extends pb_1.Message {
+    class GetLatestBlockResponse extends pb_1.Message {
         constructor(data?: any[] | {
             block_id?: dependency_6.tendermint.types.BlockID;
             block?: dependency_5.tendermint.types.Block;
@@ -644,7 +642,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetLatestBlockResponse;
     }
-    export class GetSyncingRequest extends pb_1.Message {
+    class GetSyncingRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetSyncingRequest;
         toObject(): {};
@@ -654,7 +652,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetSyncingRequest;
     }
-    export class GetSyncingResponse extends pb_1.Message {
+    class GetSyncingResponse extends pb_1.Message {
         constructor(data?: any[] | {
             syncing?: boolean;
         });
@@ -672,7 +670,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetSyncingResponse;
     }
-    export class GetNodeInfoRequest extends pb_1.Message {
+    class GetNodeInfoRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetNodeInfoRequest;
         toObject(): {};
@@ -682,7 +680,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetNodeInfoRequest;
     }
-    export class GetNodeInfoResponse extends pb_1.Message {
+    class GetNodeInfoResponse extends pb_1.Message {
         constructor(data?: any[] | {
             default_node_info?: dependency_4.tendermint.p2p.DefaultNodeInfo;
             application_version?: VersionInfo;
@@ -734,7 +732,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetNodeInfoResponse;
     }
-    export class VersionInfo extends pb_1.Message {
+    class VersionInfo extends pb_1.Message {
         constructor(data?: any[] | {
             name?: string;
             app_name?: string;
@@ -791,7 +789,7 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): VersionInfo;
     }
-    export class Module extends pb_1.Message {
+    class Module extends pb_1.Message {
         constructor(data?: any[] | {
             path?: string;
             version?: string;
@@ -819,86 +817,4 @@ export declare namespace cosmos.base.tendermint.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): Module;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedServiceService {
-        static definition: {
-            GetNodeInfo: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetNodeInfoRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetNodeInfoRequest;
-                responseSerialize: (message: GetNodeInfoResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetNodeInfoResponse;
-            };
-            GetSyncing: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetSyncingRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetSyncingRequest;
-                responseSerialize: (message: GetSyncingResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetSyncingResponse;
-            };
-            GetLatestBlock: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetLatestBlockRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetLatestBlockRequest;
-                responseSerialize: (message: GetLatestBlockResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetLatestBlockResponse;
-            };
-            GetBlockByHeight: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetBlockByHeightRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetBlockByHeightRequest;
-                responseSerialize: (message: GetBlockByHeightResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetBlockByHeightResponse;
-            };
-            GetLatestValidatorSet: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetLatestValidatorSetRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetLatestValidatorSetRequest;
-                responseSerialize: (message: GetLatestValidatorSetResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetLatestValidatorSetResponse;
-            };
-            GetValidatorSetByHeight: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetValidatorSetByHeightRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetValidatorSetByHeightRequest;
-                responseSerialize: (message: GetValidatorSetByHeightResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetValidatorSetByHeightResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract GetNodeInfo(call: grpc_1.ServerUnaryCall<GetNodeInfoRequest, GetNodeInfoResponse>, callback: grpc_1.sendUnaryData<GetNodeInfoResponse>): void;
-        abstract GetSyncing(call: grpc_1.ServerUnaryCall<GetSyncingRequest, GetSyncingResponse>, callback: grpc_1.sendUnaryData<GetSyncingResponse>): void;
-        abstract GetLatestBlock(call: grpc_1.ServerUnaryCall<GetLatestBlockRequest, GetLatestBlockResponse>, callback: grpc_1.sendUnaryData<GetLatestBlockResponse>): void;
-        abstract GetBlockByHeight(call: grpc_1.ServerUnaryCall<GetBlockByHeightRequest, GetBlockByHeightResponse>, callback: grpc_1.sendUnaryData<GetBlockByHeightResponse>): void;
-        abstract GetLatestValidatorSet(call: grpc_1.ServerUnaryCall<GetLatestValidatorSetRequest, GetLatestValidatorSetResponse>, callback: grpc_1.sendUnaryData<GetLatestValidatorSetResponse>): void;
-        abstract GetValidatorSetByHeight(call: grpc_1.ServerUnaryCall<GetValidatorSetByHeightRequest, GetValidatorSetByHeightResponse>, callback: grpc_1.sendUnaryData<GetValidatorSetByHeightResponse>): void;
-    }
-    const ServiceClient_base: grpc_1.ServiceClientConstructor;
-    export class ServiceClient extends ServiceClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        GetNodeInfo: GrpcUnaryServiceInterface<GetNodeInfoRequest, GetNodeInfoResponse>;
-        GetSyncing: GrpcUnaryServiceInterface<GetSyncingRequest, GetSyncingResponse>;
-        GetLatestBlock: GrpcUnaryServiceInterface<GetLatestBlockRequest, GetLatestBlockResponse>;
-        GetBlockByHeight: GrpcUnaryServiceInterface<GetBlockByHeightRequest, GetBlockByHeightResponse>;
-        GetLatestValidatorSet: GrpcUnaryServiceInterface<GetLatestValidatorSetRequest, GetLatestValidatorSetResponse>;
-        GetValidatorSetByHeight: GrpcUnaryServiceInterface<GetValidatorSetByHeightRequest, GetValidatorSetByHeightResponse>;
-    }
-    export {};
 }

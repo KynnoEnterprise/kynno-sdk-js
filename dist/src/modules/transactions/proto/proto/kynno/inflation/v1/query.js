@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -32,8 +28,6 @@ var dependency_3 = _interopRequireWildcard(require("./../../../cosmos/base/v1bet
 var dependency_4 = _interopRequireWildcard(require("./genesis"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1078,152 +1072,6 @@ exports.kynno = kynno;
       }(pb_1.Message);
 
       _v.QueryParamsResponse = QueryParamsResponse;
-
-      var UnimplementedQueryService = function UnimplementedQueryService() {
-        (0, _classCallCheck2["default"])(this, UnimplementedQueryService);
-      };
-
-      (0, _defineProperty2["default"])(UnimplementedQueryService, "definition", {
-        Period: {
-          path: "/kynno.inflation.v1.Query/Period",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryPeriodRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryPeriodResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        EpochMintProvision: {
-          path: "/kynno.inflation.v1.Query/EpochMintProvision",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryEpochMintProvisionRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryEpochMintProvisionResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        SkippedEpochs: {
-          path: "/kynno.inflation.v1.Query/SkippedEpochs",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QuerySkippedEpochsRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QuerySkippedEpochsResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        CirculatingSupply: {
-          path: "/kynno.inflation.v1.Query/CirculatingSupply",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryCirculatingSupplyRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryCirculatingSupplyResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        InflationRate: {
-          path: "/kynno.inflation.v1.Query/InflationRate",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryInflationRateRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryInflationRateResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        Params: {
-          path: "/kynno.inflation.v1.Query/Params",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryParamsRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryParamsResponse.deserialize(new Uint8Array(bytes));
-          }
-        }
-      });
-      _v.UnimplementedQueryService = UnimplementedQueryService;
-
-      var QueryClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-        (0, _inherits2["default"])(QueryClient, _grpc_1$makeGenericCl);
-
-        var _super13 = _createSuper(QueryClient);
-
-        function QueryClient(address, credentials, _options) {
-          var _thisSuper, _thisSuper2, _thisSuper3, _thisSuper4, _thisSuper5, _thisSuper6, _this16;
-
-          (0, _classCallCheck2["default"])(this, QueryClient);
-          _this16 = _super13.call(this, address, credentials, _options);
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this16), "Period", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this16), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Period", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this16), "EpochMintProvision", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this16), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "EpochMintProvision", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this16), "SkippedEpochs", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this16), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "SkippedEpochs", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this16), "CirculatingSupply", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper4 = (0, _assertThisInitialized2["default"])(_this16), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "CirculatingSupply", _thisSuper4).call(_thisSuper4, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this16), "InflationRate", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper5 = (0, _assertThisInitialized2["default"])(_this16), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "InflationRate", _thisSuper5).call(_thisSuper5, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this16), "Params", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper6 = (0, _assertThisInitialized2["default"])(_this16), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Params", _thisSuper6).call(_thisSuper6, message, metadata, options, callback);
-          });
-          return _this16;
-        }
-
-        return QueryClient;
-      }(grpc_1.makeGenericClientConstructor(UnimplementedQueryService.definition, "Query", {}));
-
-      _v.QueryClient = QueryClient;
     })(v1 || (v1 = _inflation.v1 || (_inflation.v1 = {})));
   })(inflation || (inflation = _kynno.inflation || (_kynno.inflation = {})));
 })(kynno || (exports.kynno = kynno = {}));

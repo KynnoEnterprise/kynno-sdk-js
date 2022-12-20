@@ -1,6 +1,6 @@
 {
   "name": "kynno-sdk-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JS and TS libs for Kynno Blockchain",
   "author": "Ahmed Oubadi <ahmedoubadihse@gmail.com>",
   "main": "index.js",

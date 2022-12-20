@@ -1,10 +1,8 @@
-/// <reference types="node" />
 import * as dependency_2 from "./../../client/v1/client";
 import * as dependency_3 from "./channel";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace ibc.core.channel.v1 {
-    export class MsgChannelOpenInit extends pb_1.Message {
+    class MsgChannelOpenInit extends pb_1.Message {
         constructor(data?: any[] | {
             port_id?: string;
             channel?: dependency_3.ibc.core.channel.v1.Channel;
@@ -41,7 +39,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenInit;
     }
-    export class MsgChannelOpenInitResponse extends pb_1.Message {
+    class MsgChannelOpenInitResponse extends pb_1.Message {
         constructor(data?: any[] | {
             channel_id?: string;
         });
@@ -59,7 +57,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenInitResponse;
     }
-    export class MsgChannelOpenTry extends pb_1.Message {
+    class MsgChannelOpenTry extends pb_1.Message {
         constructor(data?: any[] | {
             port_id?: string;
             previous_channel_id?: string;
@@ -119,7 +117,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenTry;
     }
-    export class MsgChannelOpenTryResponse extends pb_1.Message {
+    class MsgChannelOpenTryResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgChannelOpenTryResponse;
         toObject(): {};
@@ -129,7 +127,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenTryResponse;
     }
-    export class MsgChannelOpenAck extends pb_1.Message {
+    class MsgChannelOpenAck extends pb_1.Message {
         constructor(data?: any[] | {
             port_id?: string;
             channel_id?: string;
@@ -180,7 +178,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenAck;
     }
-    export class MsgChannelOpenAckResponse extends pb_1.Message {
+    class MsgChannelOpenAckResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgChannelOpenAckResponse;
         toObject(): {};
@@ -190,7 +188,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenAckResponse;
     }
-    export class MsgChannelOpenConfirm extends pb_1.Message {
+    class MsgChannelOpenConfirm extends pb_1.Message {
         constructor(data?: any[] | {
             port_id?: string;
             channel_id?: string;
@@ -231,7 +229,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenConfirm;
     }
-    export class MsgChannelOpenConfirmResponse extends pb_1.Message {
+    class MsgChannelOpenConfirmResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgChannelOpenConfirmResponse;
         toObject(): {};
@@ -241,7 +239,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelOpenConfirmResponse;
     }
-    export class MsgChannelCloseInit extends pb_1.Message {
+    class MsgChannelCloseInit extends pb_1.Message {
         constructor(data?: any[] | {
             port_id?: string;
             channel_id?: string;
@@ -269,7 +267,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelCloseInit;
     }
-    export class MsgChannelCloseInitResponse extends pb_1.Message {
+    class MsgChannelCloseInitResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgChannelCloseInitResponse;
         toObject(): {};
@@ -279,7 +277,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelCloseInitResponse;
     }
-    export class MsgChannelCloseConfirm extends pb_1.Message {
+    class MsgChannelCloseConfirm extends pb_1.Message {
         constructor(data?: any[] | {
             port_id?: string;
             channel_id?: string;
@@ -320,7 +318,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelCloseConfirm;
     }
-    export class MsgChannelCloseConfirmResponse extends pb_1.Message {
+    class MsgChannelCloseConfirmResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgChannelCloseConfirmResponse;
         toObject(): {};
@@ -330,7 +328,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgChannelCloseConfirmResponse;
     }
-    export class MsgRecvPacket extends pb_1.Message {
+    class MsgRecvPacket extends pb_1.Message {
         constructor(data?: any[] | {
             packet?: dependency_3.ibc.core.channel.v1.Packet;
             proof_commitment?: Uint8Array;
@@ -378,7 +376,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgRecvPacket;
     }
-    export class MsgRecvPacketResponse extends pb_1.Message {
+    class MsgRecvPacketResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgRecvPacketResponse;
         toObject(): {};
@@ -388,7 +386,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgRecvPacketResponse;
     }
-    export class MsgTimeout extends pb_1.Message {
+    class MsgTimeout extends pb_1.Message {
         constructor(data?: any[] | {
             packet?: dependency_3.ibc.core.channel.v1.Packet;
             proof_unreceived?: Uint8Array;
@@ -441,7 +439,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgTimeout;
     }
-    export class MsgTimeoutResponse extends pb_1.Message {
+    class MsgTimeoutResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgTimeoutResponse;
         toObject(): {};
@@ -451,7 +449,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgTimeoutResponse;
     }
-    export class MsgTimeoutOnClose extends pb_1.Message {
+    class MsgTimeoutOnClose extends pb_1.Message {
         constructor(data?: any[] | {
             packet?: dependency_3.ibc.core.channel.v1.Packet;
             proof_unreceived?: Uint8Array;
@@ -509,7 +507,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgTimeoutOnClose;
     }
-    export class MsgTimeoutOnCloseResponse extends pb_1.Message {
+    class MsgTimeoutOnCloseResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgTimeoutOnCloseResponse;
         toObject(): {};
@@ -519,7 +517,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgTimeoutOnCloseResponse;
     }
-    export class MsgAcknowledgement extends pb_1.Message {
+    class MsgAcknowledgement extends pb_1.Message {
         constructor(data?: any[] | {
             packet?: dependency_3.ibc.core.channel.v1.Packet;
             acknowledgement?: Uint8Array;
@@ -572,7 +570,7 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgAcknowledgement;
     }
-    export class MsgAcknowledgementResponse extends pb_1.Message {
+    class MsgAcknowledgementResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgAcknowledgementResponse;
         toObject(): {};
@@ -582,130 +580,4 @@ export declare namespace ibc.core.channel.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgAcknowledgementResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedMsgService {
-        static definition: {
-            ChannelOpenInit: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgChannelOpenInit) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgChannelOpenInit;
-                responseSerialize: (message: MsgChannelOpenInitResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgChannelOpenInitResponse;
-            };
-            ChannelOpenTry: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgChannelOpenTry) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgChannelOpenTry;
-                responseSerialize: (message: MsgChannelOpenTryResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgChannelOpenTryResponse;
-            };
-            ChannelOpenAck: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgChannelOpenAck) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgChannelOpenAck;
-                responseSerialize: (message: MsgChannelOpenAckResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgChannelOpenAckResponse;
-            };
-            ChannelOpenConfirm: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgChannelOpenConfirm) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgChannelOpenConfirm;
-                responseSerialize: (message: MsgChannelOpenConfirmResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgChannelOpenConfirmResponse;
-            };
-            ChannelCloseInit: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgChannelCloseInit) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgChannelCloseInit;
-                responseSerialize: (message: MsgChannelCloseInitResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgChannelCloseInitResponse;
-            };
-            ChannelCloseConfirm: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgChannelCloseConfirm) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgChannelCloseConfirm;
-                responseSerialize: (message: MsgChannelCloseConfirmResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgChannelCloseConfirmResponse;
-            };
-            RecvPacket: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgRecvPacket) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgRecvPacket;
-                responseSerialize: (message: MsgRecvPacketResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgRecvPacketResponse;
-            };
-            Timeout: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgTimeout) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgTimeout;
-                responseSerialize: (message: MsgTimeoutResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgTimeoutResponse;
-            };
-            TimeoutOnClose: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgTimeoutOnClose) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgTimeoutOnClose;
-                responseSerialize: (message: MsgTimeoutOnCloseResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgTimeoutOnCloseResponse;
-            };
-            Acknowledgement: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgAcknowledgement) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgAcknowledgement;
-                responseSerialize: (message: MsgAcknowledgementResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgAcknowledgementResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract ChannelOpenInit(call: grpc_1.ServerUnaryCall<MsgChannelOpenInit, MsgChannelOpenInitResponse>, callback: grpc_1.sendUnaryData<MsgChannelOpenInitResponse>): void;
-        abstract ChannelOpenTry(call: grpc_1.ServerUnaryCall<MsgChannelOpenTry, MsgChannelOpenTryResponse>, callback: grpc_1.sendUnaryData<MsgChannelOpenTryResponse>): void;
-        abstract ChannelOpenAck(call: grpc_1.ServerUnaryCall<MsgChannelOpenAck, MsgChannelOpenAckResponse>, callback: grpc_1.sendUnaryData<MsgChannelOpenAckResponse>): void;
-        abstract ChannelOpenConfirm(call: grpc_1.ServerUnaryCall<MsgChannelOpenConfirm, MsgChannelOpenConfirmResponse>, callback: grpc_1.sendUnaryData<MsgChannelOpenConfirmResponse>): void;
-        abstract ChannelCloseInit(call: grpc_1.ServerUnaryCall<MsgChannelCloseInit, MsgChannelCloseInitResponse>, callback: grpc_1.sendUnaryData<MsgChannelCloseInitResponse>): void;
-        abstract ChannelCloseConfirm(call: grpc_1.ServerUnaryCall<MsgChannelCloseConfirm, MsgChannelCloseConfirmResponse>, callback: grpc_1.sendUnaryData<MsgChannelCloseConfirmResponse>): void;
-        abstract RecvPacket(call: grpc_1.ServerUnaryCall<MsgRecvPacket, MsgRecvPacketResponse>, callback: grpc_1.sendUnaryData<MsgRecvPacketResponse>): void;
-        abstract Timeout(call: grpc_1.ServerUnaryCall<MsgTimeout, MsgTimeoutResponse>, callback: grpc_1.sendUnaryData<MsgTimeoutResponse>): void;
-        abstract TimeoutOnClose(call: grpc_1.ServerUnaryCall<MsgTimeoutOnClose, MsgTimeoutOnCloseResponse>, callback: grpc_1.sendUnaryData<MsgTimeoutOnCloseResponse>): void;
-        abstract Acknowledgement(call: grpc_1.ServerUnaryCall<MsgAcknowledgement, MsgAcknowledgementResponse>, callback: grpc_1.sendUnaryData<MsgAcknowledgementResponse>): void;
-    }
-    const MsgClient_base: grpc_1.ServiceClientConstructor;
-    export class MsgClient extends MsgClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        ChannelOpenInit: GrpcUnaryServiceInterface<MsgChannelOpenInit, MsgChannelOpenInitResponse>;
-        ChannelOpenTry: GrpcUnaryServiceInterface<MsgChannelOpenTry, MsgChannelOpenTryResponse>;
-        ChannelOpenAck: GrpcUnaryServiceInterface<MsgChannelOpenAck, MsgChannelOpenAckResponse>;
-        ChannelOpenConfirm: GrpcUnaryServiceInterface<MsgChannelOpenConfirm, MsgChannelOpenConfirmResponse>;
-        ChannelCloseInit: GrpcUnaryServiceInterface<MsgChannelCloseInit, MsgChannelCloseInitResponse>;
-        ChannelCloseConfirm: GrpcUnaryServiceInterface<MsgChannelCloseConfirm, MsgChannelCloseConfirmResponse>;
-        RecvPacket: GrpcUnaryServiceInterface<MsgRecvPacket, MsgRecvPacketResponse>;
-        Timeout: GrpcUnaryServiceInterface<MsgTimeout, MsgTimeoutResponse>;
-        TimeoutOnClose: GrpcUnaryServiceInterface<MsgTimeoutOnClose, MsgTimeoutOnCloseResponse>;
-        Acknowledgement: GrpcUnaryServiceInterface<MsgAcknowledgement, MsgAcknowledgementResponse>;
-    }
-    export {};
 }

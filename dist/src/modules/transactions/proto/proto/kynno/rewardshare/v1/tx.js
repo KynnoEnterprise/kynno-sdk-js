@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -28,8 +24,6 @@ var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -687,92 +681,6 @@ exports.kynno = kynno;
       }(pb_1.Message);
 
       _v.MsgCancelRewardshareResponse = MsgCancelRewardshareResponse;
-
-      var UnimplementedMsgService = function UnimplementedMsgService() {
-        (0, _classCallCheck2["default"])(this, UnimplementedMsgService);
-      };
-
-      (0, _defineProperty2["default"])(UnimplementedMsgService, "definition", {
-        RegisterRewardshare: {
-          path: "/kynno.rewardshare.v1.Msg/RegisterRewardshare",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return MsgRegisterRewardshare.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return MsgRegisterRewardshareResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        UpdateRewardshare: {
-          path: "/kynno.rewardshare.v1.Msg/UpdateRewardshare",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return MsgUpdateRewardshare.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return MsgUpdateRewardshareResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        CancelRewardshare: {
-          path: "/kynno.rewardshare.v1.Msg/CancelRewardshare",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return MsgCancelRewardshare.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return MsgCancelRewardshareResponse.deserialize(new Uint8Array(bytes));
-          }
-        }
-      });
-      _v.UnimplementedMsgService = UnimplementedMsgService;
-
-      var MsgClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-        (0, _inherits2["default"])(MsgClient, _grpc_1$makeGenericCl);
-
-        var _super7 = _createSuper(MsgClient);
-
-        function MsgClient(address, credentials, _options) {
-          var _thisSuper, _thisSuper2, _thisSuper3, _this7;
-
-          (0, _classCallCheck2["default"])(this, MsgClient);
-          _this7 = _super7.call(this, address, credentials, _options);
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this7), "RegisterRewardshare", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this7), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "RegisterRewardshare", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this7), "UpdateRewardshare", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this7), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "UpdateRewardshare", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this7), "CancelRewardshare", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this7), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "CancelRewardshare", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-          });
-          return _this7;
-        }
-
-        return MsgClient;
-      }(grpc_1.makeGenericClientConstructor(UnimplementedMsgService.definition, "Msg", {}));
-
-      _v.MsgClient = MsgClient;
     })(v1 || (v1 = _rewardshare.v1 || (_rewardshare.v1 = {})));
   })(rewardshare || (rewardshare = _kynno.rewardshare || (_kynno.rewardshare = {})));
 })(kynno || (exports.kynno = kynno = {}));

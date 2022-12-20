@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -34,8 +30,6 @@ var dependency_2 = _interopRequireWildcard(require("./genesis"));
 var dependency_3 = _interopRequireWildcard(require("./rewardshare"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1238,132 +1232,6 @@ exports.kynno = kynno;
       }(pb_1.Message);
 
       _v.QueryWithdrawerRewardsharesResponse = QueryWithdrawerRewardsharesResponse;
-
-      var UnimplementedQueryService = function UnimplementedQueryService() {
-        (0, _classCallCheck2["default"])(this, UnimplementedQueryService);
-      };
-
-      (0, _defineProperty2["default"])(UnimplementedQueryService, "definition", {
-        Rewardshares: {
-          path: "/kynno.rewardshare.v1.Query/Rewardshares",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryRewardsharesRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryRewardsharesResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        Rewardshare: {
-          path: "/kynno.rewardshare.v1.Query/Rewardshare",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryRewardshareRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryRewardshareResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        Params: {
-          path: "/kynno.rewardshare.v1.Query/Params",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryParamsRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryParamsResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        DeployerRewardshares: {
-          path: "/kynno.rewardshare.v1.Query/DeployerRewardshares",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryDeployerRewardsharesRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryDeployerRewardsharesResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        WithdrawerRewardshares: {
-          path: "/kynno.rewardshare.v1.Query/WithdrawerRewardshares",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryWithdrawerRewardsharesRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryWithdrawerRewardsharesResponse.deserialize(new Uint8Array(bytes));
-          }
-        }
-      });
-      _v.UnimplementedQueryService = UnimplementedQueryService;
-
-      var QueryClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-        (0, _inherits2["default"])(QueryClient, _grpc_1$makeGenericCl);
-
-        var _super11 = _createSuper(QueryClient);
-
-        function QueryClient(address, credentials, _options) {
-          var _thisSuper, _thisSuper2, _thisSuper3, _thisSuper4, _thisSuper5, _this19;
-
-          (0, _classCallCheck2["default"])(this, QueryClient);
-          _this19 = _super11.call(this, address, credentials, _options);
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this19), "Rewardshares", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this19), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Rewardshares", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this19), "Rewardshare", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this19), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Rewardshare", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this19), "Params", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this19), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Params", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this19), "DeployerRewardshares", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper4 = (0, _assertThisInitialized2["default"])(_this19), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "DeployerRewardshares", _thisSuper4).call(_thisSuper4, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this19), "WithdrawerRewardshares", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper5 = (0, _assertThisInitialized2["default"])(_this19), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "WithdrawerRewardshares", _thisSuper5).call(_thisSuper5, message, metadata, options, callback);
-          });
-          return _this19;
-        }
-
-        return QueryClient;
-      }(grpc_1.makeGenericClientConstructor(UnimplementedQueryService.definition, "Query", {}));
-
-      _v.QueryClient = QueryClient;
     })(v1 || (v1 = _rewardshare.v1 || (_rewardshare.v1 = {})));
   })(rewardshare || (rewardshare = _kynno.rewardshare || (_kynno.rewardshare = {})));
 })(kynno || (exports.kynno = kynno = {}));

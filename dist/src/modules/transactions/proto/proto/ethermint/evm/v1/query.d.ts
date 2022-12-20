@@ -1,12 +1,10 @@
-/// <reference types="node" />
 import * as dependency_2 from "./../../../cosmos/base/query/v1beta1/pagination";
 import * as dependency_4 from "./evm";
 import * as dependency_5 from "./tx";
 import * as dependency_6 from "./../../../google/protobuf/timestamp";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace ethermint.evm.v1 {
-    export class QueryAccountRequest extends pb_1.Message {
+    class QueryAccountRequest extends pb_1.Message {
         constructor(data?: any[] | {
             address?: string;
         });
@@ -24,7 +22,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryAccountRequest;
     }
-    export class QueryAccountResponse extends pb_1.Message {
+    class QueryAccountResponse extends pb_1.Message {
         constructor(data?: any[] | {
             balance?: string;
             code_hash?: string;
@@ -52,7 +50,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryAccountResponse;
     }
-    export class QueryCosmosAccountRequest extends pb_1.Message {
+    class QueryCosmosAccountRequest extends pb_1.Message {
         constructor(data?: any[] | {
             address?: string;
         });
@@ -70,7 +68,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryCosmosAccountRequest;
     }
-    export class QueryCosmosAccountResponse extends pb_1.Message {
+    class QueryCosmosAccountResponse extends pb_1.Message {
         constructor(data?: any[] | {
             cosmos_address?: string;
             sequence?: number;
@@ -98,7 +96,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryCosmosAccountResponse;
     }
-    export class QueryValidatorAccountRequest extends pb_1.Message {
+    class QueryValidatorAccountRequest extends pb_1.Message {
         constructor(data?: any[] | {
             cons_address?: string;
         });
@@ -116,7 +114,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryValidatorAccountRequest;
     }
-    export class QueryValidatorAccountResponse extends pb_1.Message {
+    class QueryValidatorAccountResponse extends pb_1.Message {
         constructor(data?: any[] | {
             account_address?: string;
             sequence?: number;
@@ -144,7 +142,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryValidatorAccountResponse;
     }
-    export class QueryBalanceRequest extends pb_1.Message {
+    class QueryBalanceRequest extends pb_1.Message {
         constructor(data?: any[] | {
             address?: string;
         });
@@ -162,7 +160,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryBalanceRequest;
     }
-    export class QueryBalanceResponse extends pb_1.Message {
+    class QueryBalanceResponse extends pb_1.Message {
         constructor(data?: any[] | {
             balance?: string;
         });
@@ -180,7 +178,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryBalanceResponse;
     }
-    export class QueryStorageRequest extends pb_1.Message {
+    class QueryStorageRequest extends pb_1.Message {
         constructor(data?: any[] | {
             address?: string;
             key?: string;
@@ -203,7 +201,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryStorageRequest;
     }
-    export class QueryStorageResponse extends pb_1.Message {
+    class QueryStorageResponse extends pb_1.Message {
         constructor(data?: any[] | {
             value?: string;
         });
@@ -221,7 +219,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryStorageResponse;
     }
-    export class QueryCodeRequest extends pb_1.Message {
+    class QueryCodeRequest extends pb_1.Message {
         constructor(data?: any[] | {
             address?: string;
         });
@@ -239,7 +237,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryCodeRequest;
     }
-    export class QueryCodeResponse extends pb_1.Message {
+    class QueryCodeResponse extends pb_1.Message {
         constructor(data?: any[] | {
             code?: Uint8Array;
         });
@@ -257,7 +255,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryCodeResponse;
     }
-    export class QueryTxLogsRequest extends pb_1.Message {
+    class QueryTxLogsRequest extends pb_1.Message {
         constructor(data?: any[] | {
             hash?: string;
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageRequest;
@@ -286,7 +284,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryTxLogsRequest;
     }
-    export class QueryTxLogsResponse extends pb_1.Message {
+    class QueryTxLogsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             logs?: dependency_4.ethermint.evm.v1.Log[];
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageResponse;
@@ -322,7 +320,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryTxLogsResponse;
     }
-    export class QueryParamsRequest extends pb_1.Message {
+    class QueryParamsRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): QueryParamsRequest;
         toObject(): {};
@@ -332,7 +330,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryParamsRequest;
     }
-    export class QueryParamsResponse extends pb_1.Message {
+    class QueryParamsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             params?: dependency_4.ethermint.evm.v1.Params;
         });
@@ -374,7 +372,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryParamsResponse;
     }
-    export class EthCallRequest extends pb_1.Message {
+    class EthCallRequest extends pb_1.Message {
         constructor(data?: any[] | {
             args?: Uint8Array;
             gas_cap?: number;
@@ -397,7 +395,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): EthCallRequest;
     }
-    export class EstimateGasResponse extends pb_1.Message {
+    class EstimateGasResponse extends pb_1.Message {
         constructor(data?: any[] | {
             gas?: number;
         });
@@ -415,7 +413,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): EstimateGasResponse;
     }
-    export class QueryTraceTxRequest extends pb_1.Message {
+    class QueryTraceTxRequest extends pb_1.Message {
         constructor(data?: any[] | {
             msg?: dependency_5.ethermint.evm.v1.MsgEthereumTx;
             trace_config?: dependency_4.ethermint.evm.v1.TraceConfig;
@@ -505,7 +503,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryTraceTxRequest;
     }
-    export class QueryTraceTxResponse extends pb_1.Message {
+    class QueryTraceTxResponse extends pb_1.Message {
         constructor(data?: any[] | {
             data?: Uint8Array;
         });
@@ -523,7 +521,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryTraceTxResponse;
     }
-    export class QueryTraceBlockRequest extends pb_1.Message {
+    class QueryTraceBlockRequest extends pb_1.Message {
         constructor(data?: any[] | {
             txs?: dependency_5.ethermint.evm.v1.MsgEthereumTx[];
             trace_config?: dependency_4.ethermint.evm.v1.TraceConfig;
@@ -600,7 +598,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryTraceBlockRequest;
     }
-    export class QueryTraceBlockResponse extends pb_1.Message {
+    class QueryTraceBlockResponse extends pb_1.Message {
         constructor(data?: any[] | {
             data?: Uint8Array;
         });
@@ -618,7 +616,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryTraceBlockResponse;
     }
-    export class QueryBaseFeeRequest extends pb_1.Message {
+    class QueryBaseFeeRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): QueryBaseFeeRequest;
         toObject(): {};
@@ -628,7 +626,7 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryBaseFeeRequest;
     }
-    export class QueryBaseFeeResponse extends pb_1.Message {
+    class QueryBaseFeeResponse extends pb_1.Message {
         constructor(data?: any[] | {
             base_fee?: string;
         });
@@ -646,152 +644,4 @@ export declare namespace ethermint.evm.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryBaseFeeResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedQueryService {
-        static definition: {
-            Account: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryAccountRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryAccountRequest;
-                responseSerialize: (message: QueryAccountResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryAccountResponse;
-            };
-            CosmosAccount: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryCosmosAccountRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryCosmosAccountRequest;
-                responseSerialize: (message: QueryCosmosAccountResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryCosmosAccountResponse;
-            };
-            ValidatorAccount: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryValidatorAccountRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryValidatorAccountRequest;
-                responseSerialize: (message: QueryValidatorAccountResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryValidatorAccountResponse;
-            };
-            Balance: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryBalanceRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryBalanceRequest;
-                responseSerialize: (message: QueryBalanceResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryBalanceResponse;
-            };
-            Storage: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryStorageRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryStorageRequest;
-                responseSerialize: (message: QueryStorageResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryStorageResponse;
-            };
-            Code: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryCodeRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryCodeRequest;
-                responseSerialize: (message: QueryCodeResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryCodeResponse;
-            };
-            Params: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryParamsRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryParamsRequest;
-                responseSerialize: (message: QueryParamsResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryParamsResponse;
-            };
-            EthCall: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: EthCallRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => EthCallRequest;
-                responseSerialize: (message: dependency_5.ethermint.evm.v1.MsgEthereumTxResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => dependency_5.ethermint.evm.v1.MsgEthereumTxResponse;
-            };
-            EstimateGas: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: EthCallRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => EthCallRequest;
-                responseSerialize: (message: EstimateGasResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => EstimateGasResponse;
-            };
-            TraceTx: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryTraceTxRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryTraceTxRequest;
-                responseSerialize: (message: QueryTraceTxResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryTraceTxResponse;
-            };
-            TraceBlock: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryTraceBlockRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryTraceBlockRequest;
-                responseSerialize: (message: QueryTraceBlockResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryTraceBlockResponse;
-            };
-            BaseFee: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryBaseFeeRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryBaseFeeRequest;
-                responseSerialize: (message: QueryBaseFeeResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryBaseFeeResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract Account(call: grpc_1.ServerUnaryCall<QueryAccountRequest, QueryAccountResponse>, callback: grpc_1.sendUnaryData<QueryAccountResponse>): void;
-        abstract CosmosAccount(call: grpc_1.ServerUnaryCall<QueryCosmosAccountRequest, QueryCosmosAccountResponse>, callback: grpc_1.sendUnaryData<QueryCosmosAccountResponse>): void;
-        abstract ValidatorAccount(call: grpc_1.ServerUnaryCall<QueryValidatorAccountRequest, QueryValidatorAccountResponse>, callback: grpc_1.sendUnaryData<QueryValidatorAccountResponse>): void;
-        abstract Balance(call: grpc_1.ServerUnaryCall<QueryBalanceRequest, QueryBalanceResponse>, callback: grpc_1.sendUnaryData<QueryBalanceResponse>): void;
-        abstract Storage(call: grpc_1.ServerUnaryCall<QueryStorageRequest, QueryStorageResponse>, callback: grpc_1.sendUnaryData<QueryStorageResponse>): void;
-        abstract Code(call: grpc_1.ServerUnaryCall<QueryCodeRequest, QueryCodeResponse>, callback: grpc_1.sendUnaryData<QueryCodeResponse>): void;
-        abstract Params(call: grpc_1.ServerUnaryCall<QueryParamsRequest, QueryParamsResponse>, callback: grpc_1.sendUnaryData<QueryParamsResponse>): void;
-        abstract EthCall(call: grpc_1.ServerUnaryCall<EthCallRequest, dependency_5.ethermint.evm.v1.MsgEthereumTxResponse>, callback: grpc_1.sendUnaryData<dependency_5.ethermint.evm.v1.MsgEthereumTxResponse>): void;
-        abstract EstimateGas(call: grpc_1.ServerUnaryCall<EthCallRequest, EstimateGasResponse>, callback: grpc_1.sendUnaryData<EstimateGasResponse>): void;
-        abstract TraceTx(call: grpc_1.ServerUnaryCall<QueryTraceTxRequest, QueryTraceTxResponse>, callback: grpc_1.sendUnaryData<QueryTraceTxResponse>): void;
-        abstract TraceBlock(call: grpc_1.ServerUnaryCall<QueryTraceBlockRequest, QueryTraceBlockResponse>, callback: grpc_1.sendUnaryData<QueryTraceBlockResponse>): void;
-        abstract BaseFee(call: grpc_1.ServerUnaryCall<QueryBaseFeeRequest, QueryBaseFeeResponse>, callback: grpc_1.sendUnaryData<QueryBaseFeeResponse>): void;
-    }
-    const QueryClient_base: grpc_1.ServiceClientConstructor;
-    export class QueryClient extends QueryClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        Account: GrpcUnaryServiceInterface<QueryAccountRequest, QueryAccountResponse>;
-        CosmosAccount: GrpcUnaryServiceInterface<QueryCosmosAccountRequest, QueryCosmosAccountResponse>;
-        ValidatorAccount: GrpcUnaryServiceInterface<QueryValidatorAccountRequest, QueryValidatorAccountResponse>;
-        Balance: GrpcUnaryServiceInterface<QueryBalanceRequest, QueryBalanceResponse>;
-        Storage: GrpcUnaryServiceInterface<QueryStorageRequest, QueryStorageResponse>;
-        Code: GrpcUnaryServiceInterface<QueryCodeRequest, QueryCodeResponse>;
-        Params: GrpcUnaryServiceInterface<QueryParamsRequest, QueryParamsResponse>;
-        EthCall: GrpcUnaryServiceInterface<EthCallRequest, dependency_5.ethermint.evm.v1.MsgEthereumTxResponse>;
-        EstimateGas: GrpcUnaryServiceInterface<EthCallRequest, EstimateGasResponse>;
-        TraceTx: GrpcUnaryServiceInterface<QueryTraceTxRequest, QueryTraceTxResponse>;
-        TraceBlock: GrpcUnaryServiceInterface<QueryTraceBlockRequest, QueryTraceBlockResponse>;
-        BaseFee: GrpcUnaryServiceInterface<QueryBaseFeeRequest, QueryBaseFeeResponse>;
-    }
-    export {};
 }

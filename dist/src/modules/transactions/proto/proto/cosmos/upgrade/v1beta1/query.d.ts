@@ -1,9 +1,7 @@
-/// <reference types="node" />
 import * as dependency_3 from "./upgrade";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace cosmos.upgrade.v1beta1 {
-    export class QueryCurrentPlanRequest extends pb_1.Message {
+    class QueryCurrentPlanRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): QueryCurrentPlanRequest;
         toObject(): {};
@@ -13,7 +11,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryCurrentPlanRequest;
     }
-    export class QueryCurrentPlanResponse extends pb_1.Message {
+    class QueryCurrentPlanResponse extends pb_1.Message {
         constructor(data?: any[] | {
             plan?: dependency_3.cosmos.upgrade.v1beta1.Plan;
         });
@@ -43,7 +41,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryCurrentPlanResponse;
     }
-    export class QueryAppliedPlanRequest extends pb_1.Message {
+    class QueryAppliedPlanRequest extends pb_1.Message {
         constructor(data?: any[] | {
             name?: string;
         });
@@ -61,7 +59,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryAppliedPlanRequest;
     }
-    export class QueryAppliedPlanResponse extends pb_1.Message {
+    class QueryAppliedPlanResponse extends pb_1.Message {
         constructor(data?: any[] | {
             height?: number;
         });
@@ -80,7 +78,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         static deserializeBinary(bytes: Uint8Array): QueryAppliedPlanResponse;
     }
     /** @deprecated*/
-    export class QueryUpgradedConsensusStateRequest extends pb_1.Message {
+    class QueryUpgradedConsensusStateRequest extends pb_1.Message {
         constructor(data?: any[] | {
             last_height?: number;
         });
@@ -99,7 +97,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         static deserializeBinary(bytes: Uint8Array): QueryUpgradedConsensusStateRequest;
     }
     /** @deprecated*/
-    export class QueryUpgradedConsensusStateResponse extends pb_1.Message {
+    class QueryUpgradedConsensusStateResponse extends pb_1.Message {
         constructor(data?: any[] | {
             upgraded_consensus_state?: Uint8Array;
         });
@@ -117,7 +115,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryUpgradedConsensusStateResponse;
     }
-    export class QueryModuleVersionsRequest extends pb_1.Message {
+    class QueryModuleVersionsRequest extends pb_1.Message {
         constructor(data?: any[] | {
             module_name?: string;
         });
@@ -135,7 +133,7 @@ export declare namespace cosmos.upgrade.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryModuleVersionsRequest;
     }
-    export class QueryModuleVersionsResponse extends pb_1.Message {
+    class QueryModuleVersionsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             module_versions?: dependency_3.cosmos.upgrade.v1beta1.ModuleVersion[];
         });
@@ -156,65 +154,4 @@ export declare namespace cosmos.upgrade.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryModuleVersionsResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedQueryService {
-        static definition: {
-            CurrentPlan: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryCurrentPlanRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryCurrentPlanRequest;
-                responseSerialize: (message: QueryCurrentPlanResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryCurrentPlanResponse;
-            };
-            AppliedPlan: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryAppliedPlanRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryAppliedPlanRequest;
-                responseSerialize: (message: QueryAppliedPlanResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryAppliedPlanResponse;
-            };
-            UpgradedConsensusState: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryUpgradedConsensusStateRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryUpgradedConsensusStateRequest;
-                responseSerialize: (message: QueryUpgradedConsensusStateResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryUpgradedConsensusStateResponse;
-            };
-            ModuleVersions: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryModuleVersionsRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryModuleVersionsRequest;
-                responseSerialize: (message: QueryModuleVersionsResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryModuleVersionsResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract CurrentPlan(call: grpc_1.ServerUnaryCall<QueryCurrentPlanRequest, QueryCurrentPlanResponse>, callback: grpc_1.sendUnaryData<QueryCurrentPlanResponse>): void;
-        abstract AppliedPlan(call: grpc_1.ServerUnaryCall<QueryAppliedPlanRequest, QueryAppliedPlanResponse>, callback: grpc_1.sendUnaryData<QueryAppliedPlanResponse>): void;
-        abstract UpgradedConsensusState(call: grpc_1.ServerUnaryCall<QueryUpgradedConsensusStateRequest, QueryUpgradedConsensusStateResponse>, callback: grpc_1.sendUnaryData<QueryUpgradedConsensusStateResponse>): void;
-        abstract ModuleVersions(call: grpc_1.ServerUnaryCall<QueryModuleVersionsRequest, QueryModuleVersionsResponse>, callback: grpc_1.sendUnaryData<QueryModuleVersionsResponse>): void;
-    }
-    const QueryClient_base: grpc_1.ServiceClientConstructor;
-    export class QueryClient extends QueryClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        CurrentPlan: GrpcUnaryServiceInterface<QueryCurrentPlanRequest, QueryCurrentPlanResponse>;
-        AppliedPlan: GrpcUnaryServiceInterface<QueryAppliedPlanRequest, QueryAppliedPlanResponse>;
-        /** @deprecated*/
-        UpgradedConsensusState: GrpcUnaryServiceInterface<QueryUpgradedConsensusStateRequest, QueryUpgradedConsensusStateResponse>;
-        ModuleVersions: GrpcUnaryServiceInterface<QueryModuleVersionsRequest, QueryModuleVersionsResponse>;
-    }
-    export {};
 }

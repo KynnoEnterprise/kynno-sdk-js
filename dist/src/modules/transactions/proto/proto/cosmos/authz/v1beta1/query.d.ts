@@ -1,10 +1,8 @@
-/// <reference types="node" />
 import * as dependency_2 from "./../../base/query/v1beta1/pagination";
 import * as dependency_3 from "./authz";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace cosmos.authz.v1beta1 {
-    export class QueryGrantsRequest extends pb_1.Message {
+    class QueryGrantsRequest extends pb_1.Message {
         constructor(data?: any[] | {
             granter?: string;
             grantee?: string;
@@ -43,7 +41,7 @@ export declare namespace cosmos.authz.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryGrantsRequest;
     }
-    export class QueryGrantsResponse extends pb_1.Message {
+    class QueryGrantsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             grants?: dependency_3.cosmos.authz.v1beta1.Grant[];
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageResponse;
@@ -78,7 +76,7 @@ export declare namespace cosmos.authz.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryGrantsResponse;
     }
-    export class QueryGranterGrantsRequest extends pb_1.Message {
+    class QueryGranterGrantsRequest extends pb_1.Message {
         constructor(data?: any[] | {
             granter?: string;
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageRequest;
@@ -107,7 +105,7 @@ export declare namespace cosmos.authz.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryGranterGrantsRequest;
     }
-    export class QueryGranterGrantsResponse extends pb_1.Message {
+    class QueryGranterGrantsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             grants?: dependency_3.cosmos.authz.v1beta1.GrantAuthorization[];
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageResponse;
@@ -144,7 +142,7 @@ export declare namespace cosmos.authz.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryGranterGrantsResponse;
     }
-    export class QueryGranteeGrantsRequest extends pb_1.Message {
+    class QueryGranteeGrantsRequest extends pb_1.Message {
         constructor(data?: any[] | {
             grantee?: string;
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageRequest;
@@ -173,7 +171,7 @@ export declare namespace cosmos.authz.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryGranteeGrantsRequest;
     }
-    export class QueryGranteeGrantsResponse extends pb_1.Message {
+    class QueryGranteeGrantsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             grants?: dependency_3.cosmos.authz.v1beta1.GrantAuthorization[];
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageResponse;
@@ -210,53 +208,4 @@ export declare namespace cosmos.authz.v1beta1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryGranteeGrantsResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedQueryService {
-        static definition: {
-            Grants: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryGrantsRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryGrantsRequest;
-                responseSerialize: (message: QueryGrantsResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryGrantsResponse;
-            };
-            GranterGrants: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryGranterGrantsRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryGranterGrantsRequest;
-                responseSerialize: (message: QueryGranterGrantsResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryGranterGrantsResponse;
-            };
-            GranteeGrants: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryGranteeGrantsRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryGranteeGrantsRequest;
-                responseSerialize: (message: QueryGranteeGrantsResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryGranteeGrantsResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract Grants(call: grpc_1.ServerUnaryCall<QueryGrantsRequest, QueryGrantsResponse>, callback: grpc_1.sendUnaryData<QueryGrantsResponse>): void;
-        abstract GranterGrants(call: grpc_1.ServerUnaryCall<QueryGranterGrantsRequest, QueryGranterGrantsResponse>, callback: grpc_1.sendUnaryData<QueryGranterGrantsResponse>): void;
-        abstract GranteeGrants(call: grpc_1.ServerUnaryCall<QueryGranteeGrantsRequest, QueryGranteeGrantsResponse>, callback: grpc_1.sendUnaryData<QueryGranteeGrantsResponse>): void;
-    }
-    const QueryClient_base: grpc_1.ServiceClientConstructor;
-    export class QueryClient extends QueryClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        Grants: GrpcUnaryServiceInterface<QueryGrantsRequest, QueryGrantsResponse>;
-        GranterGrants: GrpcUnaryServiceInterface<QueryGranterGrantsRequest, QueryGranterGrantsResponse>;
-        GranteeGrants: GrpcUnaryServiceInterface<QueryGranteeGrantsRequest, QueryGranteeGrantsResponse>;
-    }
-    export {};
 }

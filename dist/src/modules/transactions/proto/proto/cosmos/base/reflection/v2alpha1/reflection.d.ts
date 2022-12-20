@@ -1,8 +1,6 @@
-/// <reference types="node" />
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace cosmos.base.reflection.v2alpha1 {
-    export class AppDescriptor extends pb_1.Message {
+    class AppDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             authn?: AuthnDescriptor;
             chain?: ChainDescriptor;
@@ -81,7 +79,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): AppDescriptor;
     }
-    export class TxDescriptor extends pb_1.Message {
+    class TxDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             fullname?: string;
             msgs?: MsgDescriptor[];
@@ -106,7 +104,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): TxDescriptor;
     }
-    export class AuthnDescriptor extends pb_1.Message {
+    class AuthnDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             sign_modes?: SigningModeDescriptor[];
         });
@@ -128,7 +126,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): AuthnDescriptor;
     }
-    export class SigningModeDescriptor extends pb_1.Message {
+    class SigningModeDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             name?: string;
             number?: number;
@@ -156,7 +154,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): SigningModeDescriptor;
     }
-    export class ChainDescriptor extends pb_1.Message {
+    class ChainDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             id?: string;
         });
@@ -174,7 +172,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): ChainDescriptor;
     }
-    export class CodecDescriptor extends pb_1.Message {
+    class CodecDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             interfaces?: InterfaceDescriptor[];
         });
@@ -202,7 +200,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): CodecDescriptor;
     }
-    export class InterfaceDescriptor extends pb_1.Message {
+    class InterfaceDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             fullname?: string;
             interface_accepting_messages?: InterfaceAcceptingMessageDescriptor[];
@@ -236,7 +234,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): InterfaceDescriptor;
     }
-    export class InterfaceImplementerDescriptor extends pb_1.Message {
+    class InterfaceImplementerDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             fullname?: string;
             type_url?: string;
@@ -259,7 +257,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): InterfaceImplementerDescriptor;
     }
-    export class InterfaceAcceptingMessageDescriptor extends pb_1.Message {
+    class InterfaceAcceptingMessageDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             fullname?: string;
             field_descriptor_names?: string[];
@@ -282,7 +280,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): InterfaceAcceptingMessageDescriptor;
     }
-    export class ConfigurationDescriptor extends pb_1.Message {
+    class ConfigurationDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             bech32_account_address_prefix?: string;
         });
@@ -300,7 +298,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): ConfigurationDescriptor;
     }
-    export class MsgDescriptor extends pb_1.Message {
+    class MsgDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             msg_type_url?: string;
         });
@@ -318,7 +316,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgDescriptor;
     }
-    export class GetAuthnDescriptorRequest extends pb_1.Message {
+    class GetAuthnDescriptorRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetAuthnDescriptorRequest;
         toObject(): {};
@@ -328,7 +326,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetAuthnDescriptorRequest;
     }
-    export class GetAuthnDescriptorResponse extends pb_1.Message {
+    class GetAuthnDescriptorResponse extends pb_1.Message {
         constructor(data?: any[] | {
             authn?: AuthnDescriptor;
         });
@@ -352,7 +350,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetAuthnDescriptorResponse;
     }
-    export class GetChainDescriptorRequest extends pb_1.Message {
+    class GetChainDescriptorRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetChainDescriptorRequest;
         toObject(): {};
@@ -362,7 +360,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetChainDescriptorRequest;
     }
-    export class GetChainDescriptorResponse extends pb_1.Message {
+    class GetChainDescriptorResponse extends pb_1.Message {
         constructor(data?: any[] | {
             chain?: ChainDescriptor;
         });
@@ -382,7 +380,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetChainDescriptorResponse;
     }
-    export class GetCodecDescriptorRequest extends pb_1.Message {
+    class GetCodecDescriptorRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetCodecDescriptorRequest;
         toObject(): {};
@@ -392,7 +390,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetCodecDescriptorRequest;
     }
-    export class GetCodecDescriptorResponse extends pb_1.Message {
+    class GetCodecDescriptorResponse extends pb_1.Message {
         constructor(data?: any[] | {
             codec?: CodecDescriptor;
         });
@@ -422,7 +420,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetCodecDescriptorResponse;
     }
-    export class GetConfigurationDescriptorRequest extends pb_1.Message {
+    class GetConfigurationDescriptorRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetConfigurationDescriptorRequest;
         toObject(): {};
@@ -432,7 +430,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetConfigurationDescriptorRequest;
     }
-    export class GetConfigurationDescriptorResponse extends pb_1.Message {
+    class GetConfigurationDescriptorResponse extends pb_1.Message {
         constructor(data?: any[] | {
             config?: ConfigurationDescriptor;
         });
@@ -452,7 +450,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetConfigurationDescriptorResponse;
     }
-    export class GetQueryServicesDescriptorRequest extends pb_1.Message {
+    class GetQueryServicesDescriptorRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetQueryServicesDescriptorRequest;
         toObject(): {};
@@ -462,7 +460,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetQueryServicesDescriptorRequest;
     }
-    export class GetQueryServicesDescriptorResponse extends pb_1.Message {
+    class GetQueryServicesDescriptorResponse extends pb_1.Message {
         constructor(data?: any[] | {
             queries?: QueryServicesDescriptor;
         });
@@ -489,7 +487,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetQueryServicesDescriptorResponse;
     }
-    export class GetTxDescriptorRequest extends pb_1.Message {
+    class GetTxDescriptorRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): GetTxDescriptorRequest;
         toObject(): {};
@@ -499,7 +497,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetTxDescriptorRequest;
     }
-    export class GetTxDescriptorResponse extends pb_1.Message {
+    class GetTxDescriptorResponse extends pb_1.Message {
         constructor(data?: any[] | {
             tx?: TxDescriptor;
         });
@@ -522,7 +520,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): GetTxDescriptorResponse;
     }
-    export class QueryServicesDescriptor extends pb_1.Message {
+    class QueryServicesDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             query_services?: QueryServiceDescriptor[];
         });
@@ -547,7 +545,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryServicesDescriptor;
     }
-    export class QueryServiceDescriptor extends pb_1.Message {
+    class QueryServiceDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             fullname?: string;
             is_module?: boolean;
@@ -578,7 +576,7 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryServiceDescriptor;
     }
-    export class QueryMethodDescriptor extends pb_1.Message {
+    class QueryMethodDescriptor extends pb_1.Message {
         constructor(data?: any[] | {
             name?: string;
             full_query_path?: string;
@@ -601,86 +599,4 @@ export declare namespace cosmos.base.reflection.v2alpha1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryMethodDescriptor;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedReflectionServiceService {
-        static definition: {
-            GetAuthnDescriptor: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetAuthnDescriptorRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetAuthnDescriptorRequest;
-                responseSerialize: (message: GetAuthnDescriptorResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetAuthnDescriptorResponse;
-            };
-            GetChainDescriptor: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetChainDescriptorRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetChainDescriptorRequest;
-                responseSerialize: (message: GetChainDescriptorResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetChainDescriptorResponse;
-            };
-            GetCodecDescriptor: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetCodecDescriptorRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetCodecDescriptorRequest;
-                responseSerialize: (message: GetCodecDescriptorResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetCodecDescriptorResponse;
-            };
-            GetConfigurationDescriptor: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetConfigurationDescriptorRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetConfigurationDescriptorRequest;
-                responseSerialize: (message: GetConfigurationDescriptorResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetConfigurationDescriptorResponse;
-            };
-            GetQueryServicesDescriptor: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetQueryServicesDescriptorRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetQueryServicesDescriptorRequest;
-                responseSerialize: (message: GetQueryServicesDescriptorResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetQueryServicesDescriptorResponse;
-            };
-            GetTxDescriptor: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: GetTxDescriptorRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => GetTxDescriptorRequest;
-                responseSerialize: (message: GetTxDescriptorResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => GetTxDescriptorResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract GetAuthnDescriptor(call: grpc_1.ServerUnaryCall<GetAuthnDescriptorRequest, GetAuthnDescriptorResponse>, callback: grpc_1.sendUnaryData<GetAuthnDescriptorResponse>): void;
-        abstract GetChainDescriptor(call: grpc_1.ServerUnaryCall<GetChainDescriptorRequest, GetChainDescriptorResponse>, callback: grpc_1.sendUnaryData<GetChainDescriptorResponse>): void;
-        abstract GetCodecDescriptor(call: grpc_1.ServerUnaryCall<GetCodecDescriptorRequest, GetCodecDescriptorResponse>, callback: grpc_1.sendUnaryData<GetCodecDescriptorResponse>): void;
-        abstract GetConfigurationDescriptor(call: grpc_1.ServerUnaryCall<GetConfigurationDescriptorRequest, GetConfigurationDescriptorResponse>, callback: grpc_1.sendUnaryData<GetConfigurationDescriptorResponse>): void;
-        abstract GetQueryServicesDescriptor(call: grpc_1.ServerUnaryCall<GetQueryServicesDescriptorRequest, GetQueryServicesDescriptorResponse>, callback: grpc_1.sendUnaryData<GetQueryServicesDescriptorResponse>): void;
-        abstract GetTxDescriptor(call: grpc_1.ServerUnaryCall<GetTxDescriptorRequest, GetTxDescriptorResponse>, callback: grpc_1.sendUnaryData<GetTxDescriptorResponse>): void;
-    }
-    const ReflectionServiceClient_base: grpc_1.ServiceClientConstructor;
-    export class ReflectionServiceClient extends ReflectionServiceClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        GetAuthnDescriptor: GrpcUnaryServiceInterface<GetAuthnDescriptorRequest, GetAuthnDescriptorResponse>;
-        GetChainDescriptor: GrpcUnaryServiceInterface<GetChainDescriptorRequest, GetChainDescriptorResponse>;
-        GetCodecDescriptor: GrpcUnaryServiceInterface<GetCodecDescriptorRequest, GetCodecDescriptorResponse>;
-        GetConfigurationDescriptor: GrpcUnaryServiceInterface<GetConfigurationDescriptorRequest, GetConfigurationDescriptorResponse>;
-        GetQueryServicesDescriptor: GrpcUnaryServiceInterface<GetQueryServicesDescriptorRequest, GetQueryServicesDescriptorResponse>;
-        GetTxDescriptor: GrpcUnaryServiceInterface<GetTxDescriptorRequest, GetTxDescriptorResponse>;
-    }
-    export {};
 }

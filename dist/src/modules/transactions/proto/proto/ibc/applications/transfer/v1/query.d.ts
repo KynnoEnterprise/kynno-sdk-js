@@ -1,10 +1,8 @@
-/// <reference types="node" />
 import * as dependency_2 from "./../../../../cosmos/base/query/v1beta1/pagination";
 import * as dependency_3 from "./transfer";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace ibc.applications.transfer.v1 {
-    export class QueryDenomTraceRequest extends pb_1.Message {
+    class QueryDenomTraceRequest extends pb_1.Message {
         constructor(data?: any[] | {
             hash?: string;
         });
@@ -22,7 +20,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryDenomTraceRequest;
     }
-    export class QueryDenomTraceResponse extends pb_1.Message {
+    class QueryDenomTraceResponse extends pb_1.Message {
         constructor(data?: any[] | {
             denom_trace?: dependency_3.ibc.applications.transfer.v1.DenomTrace;
         });
@@ -43,7 +41,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryDenomTraceResponse;
     }
-    export class QueryDenomTracesRequest extends pb_1.Message {
+    class QueryDenomTracesRequest extends pb_1.Message {
         constructor(data?: any[] | {
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageRequest;
         });
@@ -67,7 +65,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryDenomTracesRequest;
     }
-    export class QueryDenomTracesResponse extends pb_1.Message {
+    class QueryDenomTracesResponse extends pb_1.Message {
         constructor(data?: any[] | {
             denom_traces?: dependency_3.ibc.applications.transfer.v1.DenomTrace[];
             pagination?: dependency_2.cosmos.base.query.v1beta1.PageResponse;
@@ -96,7 +94,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryDenomTracesResponse;
     }
-    export class QueryParamsRequest extends pb_1.Message {
+    class QueryParamsRequest extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): QueryParamsRequest;
         toObject(): {};
@@ -106,7 +104,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryParamsRequest;
     }
-    export class QueryParamsResponse extends pb_1.Message {
+    class QueryParamsResponse extends pb_1.Message {
         constructor(data?: any[] | {
             params?: dependency_3.ibc.applications.transfer.v1.Params;
         });
@@ -127,7 +125,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryParamsResponse;
     }
-    export class QueryDenomHashRequest extends pb_1.Message {
+    class QueryDenomHashRequest extends pb_1.Message {
         constructor(data?: any[] | {
             trace?: string;
         });
@@ -145,7 +143,7 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryDenomHashRequest;
     }
-    export class QueryDenomHashResponse extends pb_1.Message {
+    class QueryDenomHashResponse extends pb_1.Message {
         constructor(data?: any[] | {
             hash?: string;
         });
@@ -163,64 +161,4 @@ export declare namespace ibc.applications.transfer.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): QueryDenomHashResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedQueryService {
-        static definition: {
-            DenomTrace: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryDenomTraceRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryDenomTraceRequest;
-                responseSerialize: (message: QueryDenomTraceResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryDenomTraceResponse;
-            };
-            DenomTraces: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryDenomTracesRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryDenomTracesRequest;
-                responseSerialize: (message: QueryDenomTracesResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryDenomTracesResponse;
-            };
-            Params: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryParamsRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryParamsRequest;
-                responseSerialize: (message: QueryParamsResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryParamsResponse;
-            };
-            DenomHash: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: QueryDenomHashRequest) => Buffer;
-                requestDeserialize: (bytes: Buffer) => QueryDenomHashRequest;
-                responseSerialize: (message: QueryDenomHashResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => QueryDenomHashResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract DenomTrace(call: grpc_1.ServerUnaryCall<QueryDenomTraceRequest, QueryDenomTraceResponse>, callback: grpc_1.sendUnaryData<QueryDenomTraceResponse>): void;
-        abstract DenomTraces(call: grpc_1.ServerUnaryCall<QueryDenomTracesRequest, QueryDenomTracesResponse>, callback: grpc_1.sendUnaryData<QueryDenomTracesResponse>): void;
-        abstract Params(call: grpc_1.ServerUnaryCall<QueryParamsRequest, QueryParamsResponse>, callback: grpc_1.sendUnaryData<QueryParamsResponse>): void;
-        abstract DenomHash(call: grpc_1.ServerUnaryCall<QueryDenomHashRequest, QueryDenomHashResponse>, callback: grpc_1.sendUnaryData<QueryDenomHashResponse>): void;
-    }
-    const QueryClient_base: grpc_1.ServiceClientConstructor;
-    export class QueryClient extends QueryClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        DenomTrace: GrpcUnaryServiceInterface<QueryDenomTraceRequest, QueryDenomTraceResponse>;
-        DenomTraces: GrpcUnaryServiceInterface<QueryDenomTracesRequest, QueryDenomTracesResponse>;
-        Params: GrpcUnaryServiceInterface<QueryParamsRequest, QueryParamsResponse>;
-        DenomHash: GrpcUnaryServiceInterface<QueryDenomHashRequest, QueryDenomHashResponse>;
-    }
-    export {};
 }

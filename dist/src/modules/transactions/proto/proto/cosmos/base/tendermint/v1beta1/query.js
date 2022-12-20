@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.cosmos = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -38,8 +34,6 @@ var dependency_6 = _interopRequireWildcard(require("./../../../../tendermint/typ
 var dependency_7 = _interopRequireWildcard(require("./../../query/v1beta1/pagination"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -2079,152 +2073,6 @@ exports.cosmos = cosmos;
         }(pb_1.Message);
 
         _v1beta.Module = Module;
-
-        var UnimplementedServiceService = function UnimplementedServiceService() {
-          (0, _classCallCheck2["default"])(this, UnimplementedServiceService);
-        };
-
-        (0, _defineProperty2["default"])(UnimplementedServiceService, "definition", {
-          GetNodeInfo: {
-            path: "/cosmos.base.tendermint.v1beta1.Service/GetNodeInfo",
-            requestStream: false,
-            responseStream: false,
-            requestSerialize: function requestSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            requestDeserialize: function requestDeserialize(bytes) {
-              return GetNodeInfoRequest.deserialize(new Uint8Array(bytes));
-            },
-            responseSerialize: function responseSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            responseDeserialize: function responseDeserialize(bytes) {
-              return GetNodeInfoResponse.deserialize(new Uint8Array(bytes));
-            }
-          },
-          GetSyncing: {
-            path: "/cosmos.base.tendermint.v1beta1.Service/GetSyncing",
-            requestStream: false,
-            responseStream: false,
-            requestSerialize: function requestSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            requestDeserialize: function requestDeserialize(bytes) {
-              return GetSyncingRequest.deserialize(new Uint8Array(bytes));
-            },
-            responseSerialize: function responseSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            responseDeserialize: function responseDeserialize(bytes) {
-              return GetSyncingResponse.deserialize(new Uint8Array(bytes));
-            }
-          },
-          GetLatestBlock: {
-            path: "/cosmos.base.tendermint.v1beta1.Service/GetLatestBlock",
-            requestStream: false,
-            responseStream: false,
-            requestSerialize: function requestSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            requestDeserialize: function requestDeserialize(bytes) {
-              return GetLatestBlockRequest.deserialize(new Uint8Array(bytes));
-            },
-            responseSerialize: function responseSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            responseDeserialize: function responseDeserialize(bytes) {
-              return GetLatestBlockResponse.deserialize(new Uint8Array(bytes));
-            }
-          },
-          GetBlockByHeight: {
-            path: "/cosmos.base.tendermint.v1beta1.Service/GetBlockByHeight",
-            requestStream: false,
-            responseStream: false,
-            requestSerialize: function requestSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            requestDeserialize: function requestDeserialize(bytes) {
-              return GetBlockByHeightRequest.deserialize(new Uint8Array(bytes));
-            },
-            responseSerialize: function responseSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            responseDeserialize: function responseDeserialize(bytes) {
-              return GetBlockByHeightResponse.deserialize(new Uint8Array(bytes));
-            }
-          },
-          GetLatestValidatorSet: {
-            path: "/cosmos.base.tendermint.v1beta1.Service/GetLatestValidatorSet",
-            requestStream: false,
-            responseStream: false,
-            requestSerialize: function requestSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            requestDeserialize: function requestDeserialize(bytes) {
-              return GetLatestValidatorSetRequest.deserialize(new Uint8Array(bytes));
-            },
-            responseSerialize: function responseSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            responseDeserialize: function responseDeserialize(bytes) {
-              return GetLatestValidatorSetResponse.deserialize(new Uint8Array(bytes));
-            }
-          },
-          GetValidatorSetByHeight: {
-            path: "/cosmos.base.tendermint.v1beta1.Service/GetValidatorSetByHeight",
-            requestStream: false,
-            responseStream: false,
-            requestSerialize: function requestSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            requestDeserialize: function requestDeserialize(bytes) {
-              return GetValidatorSetByHeightRequest.deserialize(new Uint8Array(bytes));
-            },
-            responseSerialize: function responseSerialize(message) {
-              return Buffer.from(message.serialize());
-            },
-            responseDeserialize: function responseDeserialize(bytes) {
-              return GetValidatorSetByHeightResponse.deserialize(new Uint8Array(bytes));
-            }
-          }
-        });
-        _v1beta.UnimplementedServiceService = UnimplementedServiceService;
-
-        var ServiceClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-          (0, _inherits2["default"])(ServiceClient, _grpc_1$makeGenericCl);
-
-          var _super16 = _createSuper(ServiceClient);
-
-          function ServiceClient(address, credentials, _options) {
-            var _thisSuper, _thisSuper2, _thisSuper3, _thisSuper4, _thisSuper5, _thisSuper6, _this24;
-
-            (0, _classCallCheck2["default"])(this, ServiceClient);
-            _this24 = _super16.call(this, address, credentials, _options);
-            (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GetNodeInfo", function (message, metadata, options, callback) {
-              return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(ServiceClient.prototype)), "GetNodeInfo", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-            });
-            (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GetSyncing", function (message, metadata, options, callback) {
-              return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(ServiceClient.prototype)), "GetSyncing", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-            });
-            (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GetLatestBlock", function (message, metadata, options, callback) {
-              return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(ServiceClient.prototype)), "GetLatestBlock", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-            });
-            (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GetBlockByHeight", function (message, metadata, options, callback) {
-              return (0, _get2["default"])((_thisSuper4 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(ServiceClient.prototype)), "GetBlockByHeight", _thisSuper4).call(_thisSuper4, message, metadata, options, callback);
-            });
-            (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GetLatestValidatorSet", function (message, metadata, options, callback) {
-              return (0, _get2["default"])((_thisSuper5 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(ServiceClient.prototype)), "GetLatestValidatorSet", _thisSuper5).call(_thisSuper5, message, metadata, options, callback);
-            });
-            (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GetValidatorSetByHeight", function (message, metadata, options, callback) {
-              return (0, _get2["default"])((_thisSuper6 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(ServiceClient.prototype)), "GetValidatorSetByHeight", _thisSuper6).call(_thisSuper6, message, metadata, options, callback);
-            });
-            return _this24;
-          }
-
-          return ServiceClient;
-        }(grpc_1.makeGenericClientConstructor(UnimplementedServiceService.definition, "Service", {}));
-
-        _v1beta.ServiceClient = ServiceClient;
       })(v1beta1 || (v1beta1 = _tendermint.v1beta1 || (_tendermint.v1beta1 = {})));
     })(tendermint || (tendermint = _base.tendermint || (_base.tendermint = {})));
   })(base || (base = _cosmos.base || (_cosmos.base = {})));

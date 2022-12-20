@@ -1,9 +1,7 @@
-/// <reference types="node" />
 import * as dependency_3 from "./../../../cosmos/base/v1beta1/coin";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace kynno.erc20.v1 {
-    export class MsgConvertCoin extends pb_1.Message {
+    class MsgConvertCoin extends pb_1.Message {
         constructor(data?: any[] | {
             coin?: dependency_3.cosmos.base.v1beta1.Coin;
             receiver?: string;
@@ -34,7 +32,7 @@ export declare namespace kynno.erc20.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConvertCoin;
     }
-    export class MsgConvertCoinResponse extends pb_1.Message {
+    class MsgConvertCoinResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgConvertCoinResponse;
         toObject(): {};
@@ -44,7 +42,7 @@ export declare namespace kynno.erc20.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConvertCoinResponse;
     }
-    export class MsgConvertERC20 extends pb_1.Message {
+    class MsgConvertERC20 extends pb_1.Message {
         constructor(data?: any[] | {
             contract_address?: string;
             amount?: string;
@@ -77,7 +75,7 @@ export declare namespace kynno.erc20.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConvertERC20;
     }
-    export class MsgConvertERC20Response extends pb_1.Message {
+    class MsgConvertERC20Response extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgConvertERC20Response;
         toObject(): {};
@@ -87,42 +85,4 @@ export declare namespace kynno.erc20.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConvertERC20Response;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedMsgService {
-        static definition: {
-            ConvertCoin: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgConvertCoin) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgConvertCoin;
-                responseSerialize: (message: MsgConvertCoinResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgConvertCoinResponse;
-            };
-            ConvertERC20: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgConvertERC20) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgConvertERC20;
-                responseSerialize: (message: MsgConvertERC20Response) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgConvertERC20Response;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract ConvertCoin(call: grpc_1.ServerUnaryCall<MsgConvertCoin, MsgConvertCoinResponse>, callback: grpc_1.sendUnaryData<MsgConvertCoinResponse>): void;
-        abstract ConvertERC20(call: grpc_1.ServerUnaryCall<MsgConvertERC20, MsgConvertERC20Response>, callback: grpc_1.sendUnaryData<MsgConvertERC20Response>): void;
-    }
-    const MsgClient_base: grpc_1.ServiceClientConstructor;
-    export class MsgClient extends MsgClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        ConvertCoin: GrpcUnaryServiceInterface<MsgConvertCoin, MsgConvertCoinResponse>;
-        ConvertERC20: GrpcUnaryServiceInterface<MsgConvertERC20, MsgConvertERC20Response>;
-    }
-    export {};
 }

@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -28,8 +24,6 @@ var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime
 var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1873,151 +1867,5 @@ exports.kynno = kynno;
     }(pb_1.Message);
 
     _nft.MsgTransferDenomResponse = MsgTransferDenomResponse;
-
-    var UnimplementedMsgService = function UnimplementedMsgService() {
-      (0, _classCallCheck2["default"])(this, UnimplementedMsgService);
-    };
-
-    (0, _defineProperty2["default"])(UnimplementedMsgService, "definition", {
-      IssueDenom: {
-        path: "/kynno.nft.Msg/IssueDenom",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return MsgIssueDenom.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return MsgIssueDenomResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      MintNFT: {
-        path: "/kynno.nft.Msg/MintNFT",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return MsgMintNFT.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return MsgMintNFTResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      EditNFT: {
-        path: "/kynno.nft.Msg/EditNFT",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return MsgEditNFT.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return MsgEditNFTResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      TransferNFT: {
-        path: "/kynno.nft.Msg/TransferNFT",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return MsgTransferNFT.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return MsgTransferNFTResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      BurnNFT: {
-        path: "/kynno.nft.Msg/BurnNFT",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return MsgBurnNFT.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return MsgBurnNFTResponse.deserialize(new Uint8Array(bytes));
-        }
-      },
-      TransferDenom: {
-        path: "/kynno.nft.Msg/TransferDenom",
-        requestStream: false,
-        responseStream: false,
-        requestSerialize: function requestSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        requestDeserialize: function requestDeserialize(bytes) {
-          return MsgTransferDenom.deserialize(new Uint8Array(bytes));
-        },
-        responseSerialize: function responseSerialize(message) {
-          return Buffer.from(message.serialize());
-        },
-        responseDeserialize: function responseDeserialize(bytes) {
-          return MsgTransferDenomResponse.deserialize(new Uint8Array(bytes));
-        }
-      }
-    });
-    _nft.UnimplementedMsgService = UnimplementedMsgService;
-
-    var MsgClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-      (0, _inherits2["default"])(MsgClient, _grpc_1$makeGenericCl);
-
-      var _super13 = _createSuper(MsgClient);
-
-      function MsgClient(address, credentials, _options) {
-        var _thisSuper, _thisSuper2, _thisSuper3, _thisSuper4, _thisSuper5, _thisSuper6, _this13;
-
-        (0, _classCallCheck2["default"])(this, MsgClient);
-        _this13 = _super13.call(this, address, credentials, _options);
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this13), "IssueDenom", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this13), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "IssueDenom", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this13), "MintNFT", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this13), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "MintNFT", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this13), "EditNFT", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this13), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "EditNFT", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this13), "TransferNFT", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper4 = (0, _assertThisInitialized2["default"])(_this13), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "TransferNFT", _thisSuper4).call(_thisSuper4, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this13), "BurnNFT", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper5 = (0, _assertThisInitialized2["default"])(_this13), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "BurnNFT", _thisSuper5).call(_thisSuper5, message, metadata, options, callback);
-        });
-        (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this13), "TransferDenom", function (message, metadata, options, callback) {
-          return (0, _get2["default"])((_thisSuper6 = (0, _assertThisInitialized2["default"])(_this13), (0, _getPrototypeOf2["default"])(MsgClient.prototype)), "TransferDenom", _thisSuper6).call(_thisSuper6, message, metadata, options, callback);
-        });
-        return _this13;
-      }
-
-      return MsgClient;
-    }(grpc_1.makeGenericClientConstructor(UnimplementedMsgService.definition, "Msg", {}));
-
-    _nft.MsgClient = MsgClient;
   })(nft || (nft = _kynno.nft || (_kynno.nft = {})));
 })(kynno || (exports.kynno = kynno = {}));

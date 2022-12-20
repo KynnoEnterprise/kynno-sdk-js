@@ -1,11 +1,9 @@
-/// <reference types="node" />
 import * as dependency_2 from "./../../../../google/protobuf/any";
 import * as dependency_3 from "./../../client/v1/client";
 import * as dependency_4 from "./connection";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace ibc.core.connection.v1 {
-    export class MsgConnectionOpenInit extends pb_1.Message {
+    class MsgConnectionOpenInit extends pb_1.Message {
         constructor(data?: any[] | {
             client_id?: string;
             counterparty?: dependency_4.ibc.core.connection.v1.Counterparty;
@@ -52,7 +50,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenInit;
     }
-    export class MsgConnectionOpenInitResponse extends pb_1.Message {
+    class MsgConnectionOpenInitResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgConnectionOpenInitResponse;
         toObject(): {};
@@ -62,7 +60,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenInitResponse;
     }
-    export class MsgConnectionOpenTry extends pb_1.Message {
+    class MsgConnectionOpenTry extends pb_1.Message {
         constructor(data?: any[] | {
             client_id?: string;
             previous_connection_id?: string;
@@ -153,7 +151,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenTry;
     }
-    export class MsgConnectionOpenTryResponse extends pb_1.Message {
+    class MsgConnectionOpenTryResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgConnectionOpenTryResponse;
         toObject(): {};
@@ -163,7 +161,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenTryResponse;
     }
-    export class MsgConnectionOpenAck extends pb_1.Message {
+    class MsgConnectionOpenAck extends pb_1.Message {
         constructor(data?: any[] | {
             connection_id?: string;
             counterparty_connection_id?: string;
@@ -238,7 +236,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenAck;
     }
-    export class MsgConnectionOpenAckResponse extends pb_1.Message {
+    class MsgConnectionOpenAckResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgConnectionOpenAckResponse;
         toObject(): {};
@@ -248,7 +246,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenAckResponse;
     }
-    export class MsgConnectionOpenConfirm extends pb_1.Message {
+    class MsgConnectionOpenConfirm extends pb_1.Message {
         constructor(data?: any[] | {
             connection_id?: string;
             proof_ack?: Uint8Array;
@@ -284,7 +282,7 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenConfirm;
     }
-    export class MsgConnectionOpenConfirmResponse extends pb_1.Message {
+    class MsgConnectionOpenConfirmResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgConnectionOpenConfirmResponse;
         toObject(): {};
@@ -294,64 +292,4 @@ export declare namespace ibc.core.connection.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgConnectionOpenConfirmResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedMsgService {
-        static definition: {
-            ConnectionOpenInit: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgConnectionOpenInit) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgConnectionOpenInit;
-                responseSerialize: (message: MsgConnectionOpenInitResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgConnectionOpenInitResponse;
-            };
-            ConnectionOpenTry: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgConnectionOpenTry) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgConnectionOpenTry;
-                responseSerialize: (message: MsgConnectionOpenTryResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgConnectionOpenTryResponse;
-            };
-            ConnectionOpenAck: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgConnectionOpenAck) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgConnectionOpenAck;
-                responseSerialize: (message: MsgConnectionOpenAckResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgConnectionOpenAckResponse;
-            };
-            ConnectionOpenConfirm: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgConnectionOpenConfirm) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgConnectionOpenConfirm;
-                responseSerialize: (message: MsgConnectionOpenConfirmResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgConnectionOpenConfirmResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract ConnectionOpenInit(call: grpc_1.ServerUnaryCall<MsgConnectionOpenInit, MsgConnectionOpenInitResponse>, callback: grpc_1.sendUnaryData<MsgConnectionOpenInitResponse>): void;
-        abstract ConnectionOpenTry(call: grpc_1.ServerUnaryCall<MsgConnectionOpenTry, MsgConnectionOpenTryResponse>, callback: grpc_1.sendUnaryData<MsgConnectionOpenTryResponse>): void;
-        abstract ConnectionOpenAck(call: grpc_1.ServerUnaryCall<MsgConnectionOpenAck, MsgConnectionOpenAckResponse>, callback: grpc_1.sendUnaryData<MsgConnectionOpenAckResponse>): void;
-        abstract ConnectionOpenConfirm(call: grpc_1.ServerUnaryCall<MsgConnectionOpenConfirm, MsgConnectionOpenConfirmResponse>, callback: grpc_1.sendUnaryData<MsgConnectionOpenConfirmResponse>): void;
-    }
-    const MsgClient_base: grpc_1.ServiceClientConstructor;
-    export class MsgClient extends MsgClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        ConnectionOpenInit: GrpcUnaryServiceInterface<MsgConnectionOpenInit, MsgConnectionOpenInitResponse>;
-        ConnectionOpenTry: GrpcUnaryServiceInterface<MsgConnectionOpenTry, MsgConnectionOpenTryResponse>;
-        ConnectionOpenAck: GrpcUnaryServiceInterface<MsgConnectionOpenAck, MsgConnectionOpenAckResponse>;
-        ConnectionOpenConfirm: GrpcUnaryServiceInterface<MsgConnectionOpenConfirm, MsgConnectionOpenConfirmResponse>;
-    }
-    export {};
 }

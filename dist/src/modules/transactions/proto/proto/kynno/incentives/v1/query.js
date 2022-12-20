@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -36,8 +32,6 @@ var dependency_3 = _interopRequireWildcard(require("./genesis"));
 var dependency_4 = _interopRequireWildcard(require("./incentives"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -1652,172 +1646,6 @@ exports.kynno = kynno;
       }(pb_1.Message);
 
       _v.QueryParamsResponse = QueryParamsResponse;
-
-      var UnimplementedQueryService = function UnimplementedQueryService() {
-        (0, _classCallCheck2["default"])(this, UnimplementedQueryService);
-      };
-
-      (0, _defineProperty2["default"])(UnimplementedQueryService, "definition", {
-        Incentives: {
-          path: "/kynno.incentives.v1.Query/Incentives",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryIncentivesRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryIncentivesResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        Incentive: {
-          path: "/kynno.incentives.v1.Query/Incentive",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryIncentiveRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryIncentiveResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        GasMeters: {
-          path: "/kynno.incentives.v1.Query/GasMeters",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryGasMetersRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryGasMetersResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        GasMeter: {
-          path: "/kynno.incentives.v1.Query/GasMeter",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryGasMeterRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryGasMeterResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        AllocationMeters: {
-          path: "/kynno.incentives.v1.Query/AllocationMeters",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryAllocationMetersRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryAllocationMetersResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        AllocationMeter: {
-          path: "/kynno.incentives.v1.Query/AllocationMeter",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryAllocationMeterRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryAllocationMeterResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        Params: {
-          path: "/kynno.incentives.v1.Query/Params",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryParamsRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryParamsResponse.deserialize(new Uint8Array(bytes));
-          }
-        }
-      });
-      _v.UnimplementedQueryService = UnimplementedQueryService;
-
-      var QueryClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-        (0, _inherits2["default"])(QueryClient, _grpc_1$makeGenericCl);
-
-        var _super15 = _createSuper(QueryClient);
-
-        function QueryClient(address, credentials, _options) {
-          var _thisSuper, _thisSuper2, _thisSuper3, _thisSuper4, _thisSuper5, _thisSuper6, _thisSuper7, _this24;
-
-          (0, _classCallCheck2["default"])(this, QueryClient);
-          _this24 = _super15.call(this, address, credentials, _options);
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "Incentives", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Incentives", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "Incentive", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Incentive", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GasMeters", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper3 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "GasMeters", _thisSuper3).call(_thisSuper3, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "GasMeter", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper4 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "GasMeter", _thisSuper4).call(_thisSuper4, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "AllocationMeters", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper5 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "AllocationMeters", _thisSuper5).call(_thisSuper5, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "AllocationMeter", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper6 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "AllocationMeter", _thisSuper6).call(_thisSuper6, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this24), "Params", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper7 = (0, _assertThisInitialized2["default"])(_this24), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "Params", _thisSuper7).call(_thisSuper7, message, metadata, options, callback);
-          });
-          return _this24;
-        }
-
-        return QueryClient;
-      }(grpc_1.makeGenericClientConstructor(UnimplementedQueryService.definition, "Query", {}));
-
-      _v.QueryClient = QueryClient;
     })(v1 || (v1 = _incentives.v1 || (_incentives.v1 = {})));
   })(incentives || (incentives = _kynno.incentives || (_kynno.incentives = {})));
 })(kynno || (exports.kynno = kynno = {}));

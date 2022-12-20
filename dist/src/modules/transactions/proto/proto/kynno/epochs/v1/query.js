@@ -9,10 +9,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.kynno = void 0;
 
-var _get2 = _interopRequireDefault(require("@babel/runtime/helpers/get"));
-
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
-
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -32,8 +28,6 @@ var dependency_3 = _interopRequireWildcard(require("./../../../cosmos/base/query
 var dependency_4 = _interopRequireWildcard(require("./genesis"));
 
 var pb_1 = _interopRequireWildcard(require("google-protobuf"));
-
-var grpc_1 = _interopRequireWildcard(require("@grpc/grpc-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -497,72 +491,6 @@ exports.kynno = kynno;
       }(pb_1.Message);
 
       _v.QueryCurrentEpochResponse = QueryCurrentEpochResponse;
-
-      var UnimplementedQueryService = function UnimplementedQueryService() {
-        (0, _classCallCheck2["default"])(this, UnimplementedQueryService);
-      };
-
-      (0, _defineProperty2["default"])(UnimplementedQueryService, "definition", {
-        EpochInfos: {
-          path: "/kynno.epochs.v1.Query/EpochInfos",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryEpochsInfoRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryEpochsInfoResponse.deserialize(new Uint8Array(bytes));
-          }
-        },
-        CurrentEpoch: {
-          path: "/kynno.epochs.v1.Query/CurrentEpoch",
-          requestStream: false,
-          responseStream: false,
-          requestSerialize: function requestSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          requestDeserialize: function requestDeserialize(bytes) {
-            return QueryCurrentEpochRequest.deserialize(new Uint8Array(bytes));
-          },
-          responseSerialize: function responseSerialize(message) {
-            return Buffer.from(message.serialize());
-          },
-          responseDeserialize: function responseDeserialize(bytes) {
-            return QueryCurrentEpochResponse.deserialize(new Uint8Array(bytes));
-          }
-        }
-      });
-      _v.UnimplementedQueryService = UnimplementedQueryService;
-
-      var QueryClient = /*#__PURE__*/function (_grpc_1$makeGenericCl) {
-        (0, _inherits2["default"])(QueryClient, _grpc_1$makeGenericCl);
-
-        var _super5 = _createSuper(QueryClient);
-
-        function QueryClient(address, credentials, _options) {
-          var _thisSuper, _thisSuper2, _this7;
-
-          (0, _classCallCheck2["default"])(this, QueryClient);
-          _this7 = _super5.call(this, address, credentials, _options);
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this7), "EpochInfos", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper = (0, _assertThisInitialized2["default"])(_this7), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "EpochInfos", _thisSuper).call(_thisSuper, message, metadata, options, callback);
-          });
-          (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this7), "CurrentEpoch", function (message, metadata, options, callback) {
-            return (0, _get2["default"])((_thisSuper2 = (0, _assertThisInitialized2["default"])(_this7), (0, _getPrototypeOf2["default"])(QueryClient.prototype)), "CurrentEpoch", _thisSuper2).call(_thisSuper2, message, metadata, options, callback);
-          });
-          return _this7;
-        }
-
-        return QueryClient;
-      }(grpc_1.makeGenericClientConstructor(UnimplementedQueryService.definition, "Query", {}));
-
-      _v.QueryClient = QueryClient;
     })(v1 || (v1 = _epochs.v1 || (_epochs.v1 = {})));
   })(epochs || (epochs = _kynno.epochs || (_kynno.epochs = {})));
 })(kynno || (exports.kynno = kynno = {}));

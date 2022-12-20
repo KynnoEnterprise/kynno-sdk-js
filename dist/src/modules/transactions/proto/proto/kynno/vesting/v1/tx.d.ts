@@ -1,10 +1,8 @@
-/// <reference types="node" />
 import * as dependency_3 from "./../../../google/protobuf/timestamp";
 import * as dependency_4 from "./../../../cosmos/vesting/v1beta1/vesting";
 import * as pb_1 from "google-protobuf";
-import * as grpc_1 from "@grpc/grpc-js";
 export declare namespace kynno.vesting.v1 {
-    export class MsgCreateClawbackVestingAccount extends pb_1.Message {
+    class MsgCreateClawbackVestingAccount extends pb_1.Message {
         constructor(data?: any[] | {
             from_address?: string;
             to_address?: string;
@@ -62,7 +60,7 @@ export declare namespace kynno.vesting.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgCreateClawbackVestingAccount;
     }
-    export class MsgCreateClawbackVestingAccountResponse extends pb_1.Message {
+    class MsgCreateClawbackVestingAccountResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgCreateClawbackVestingAccountResponse;
         toObject(): {};
@@ -72,7 +70,7 @@ export declare namespace kynno.vesting.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgCreateClawbackVestingAccountResponse;
     }
-    export class MsgClawback extends pb_1.Message {
+    class MsgClawback extends pb_1.Message {
         constructor(data?: any[] | {
             funder_address?: string;
             account_address?: string;
@@ -100,7 +98,7 @@ export declare namespace kynno.vesting.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgClawback;
     }
-    export class MsgClawbackResponse extends pb_1.Message {
+    class MsgClawbackResponse extends pb_1.Message {
         constructor(data?: any[] | {});
         static fromObject(data: {}): MsgClawbackResponse;
         toObject(): {};
@@ -110,42 +108,4 @@ export declare namespace kynno.vesting.v1 {
         serializeBinary(): Uint8Array;
         static deserializeBinary(bytes: Uint8Array): MsgClawbackResponse;
     }
-    interface GrpcUnaryServiceInterface<P, R> {
-        (message: P, metadata: grpc_1.Metadata, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, metadata: grpc_1.Metadata, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, options: grpc_1.CallOptions, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-        (message: P, callback: grpc_1.requestCallback<R>): grpc_1.ClientUnaryCall;
-    }
-    export abstract class UnimplementedMsgService {
-        static definition: {
-            CreateClawbackVestingAccount: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgCreateClawbackVestingAccount) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgCreateClawbackVestingAccount;
-                responseSerialize: (message: MsgCreateClawbackVestingAccountResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgCreateClawbackVestingAccountResponse;
-            };
-            Clawback: {
-                path: string;
-                requestStream: boolean;
-                responseStream: boolean;
-                requestSerialize: (message: MsgClawback) => Buffer;
-                requestDeserialize: (bytes: Buffer) => MsgClawback;
-                responseSerialize: (message: MsgClawbackResponse) => Buffer;
-                responseDeserialize: (bytes: Buffer) => MsgClawbackResponse;
-            };
-        };
-        [method: string]: grpc_1.UntypedHandleCall;
-        abstract CreateClawbackVestingAccount(call: grpc_1.ServerUnaryCall<MsgCreateClawbackVestingAccount, MsgCreateClawbackVestingAccountResponse>, callback: grpc_1.sendUnaryData<MsgCreateClawbackVestingAccountResponse>): void;
-        abstract Clawback(call: grpc_1.ServerUnaryCall<MsgClawback, MsgClawbackResponse>, callback: grpc_1.sendUnaryData<MsgClawbackResponse>): void;
-    }
-    const MsgClient_base: grpc_1.ServiceClientConstructor;
-    export class MsgClient extends MsgClient_base {
-        constructor(address: string, credentials: grpc_1.ChannelCredentials, options?: Partial<grpc_1.ChannelOptions>);
-        CreateClawbackVestingAccount: GrpcUnaryServiceInterface<MsgCreateClawbackVestingAccount, MsgCreateClawbackVestingAccountResponse>;
-        Clawback: GrpcUnaryServiceInterface<MsgClawback, MsgClawbackResponse>;
-    }
-    export {};
 }
