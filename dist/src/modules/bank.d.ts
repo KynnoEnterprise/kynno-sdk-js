@@ -3,7 +3,7 @@ import { Client } from '../client';
  * This module is mainly used to transfer coins between accounts,
  * query account balances, and provide common offline transaction signing and broadcasting methods.
  *
- * [More Details](https://www.kynno.io/docs/features/bank.html)
+ * [More Details](https://www.docs.kynno.dev/features/bank.html)
  *
  * @category Modules
  * @since v0.1

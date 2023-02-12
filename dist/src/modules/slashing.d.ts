@@ -6,7 +6,7 @@ import * as types from '../types';
  * The offline validators will be removed from the validator set and put into jail, which means their voting power is zero.
  * During the jail period, these nodes are not even validator candidates. Once the jail period ends, they can send [[unjail]] transactions to free themselves and become validator candidates again.
  *
- * [More Details](https://www.kynno.io/docs/features/slashing.html)
+ * [More Details](https://www.docs.kynno.dev/features/slashing.html)
  *
  * @category Modules
  */

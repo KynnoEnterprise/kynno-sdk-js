@@ -11,7 +11,7 @@ import { SdkError, CODES } from '../errors';
  * To reduce computation stress, a lazy distribution strategy is brought in. lazy means that the benefit won't be paid directly to contributors automatically.
  * The contributors are required to explicitly send transactions to withdraw their benefit, otherwise, their benefit will be kept in the global pool.
  *
- * [More Details](https://www.kynno.io/docs/features/distribution.html)
+ * [More Details](https://www.docs.kynno.dev/features/distribution.html)
  *
  * @category Modules
  * @since v0.1

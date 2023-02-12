@@ -24,7 +24,7 @@ import { Msg } from './types';
  * the validator's bonded token will be slashed by `slash_fraction_censorship` percent, and the validator will be jailed.
  * Until the jail time exceeds `censorship_jail_duration`, the validator can be released by executing `unjail` command.
  *
- * [More Details](https://www.kynno.io/docs/concepts/gov-params.html#parameters-in-slashing)
+ * [More Details](https://www.docs.kynno.dev/concepts/gov-params.html#parameters-in-slashing)
  */
 export interface SlashingParams {
     max_evidence_age: string;

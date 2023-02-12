@@ -97,7 +97,6 @@ const account: { accountAddress: string,sequence: number,accountNumber: number,p
 - createName
 - resolve
 - ownerOf
-- transfer
 - burn
 - setValue
 ### slashing `src/modules/slashing.ts`

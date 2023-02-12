@@ -6,7 +6,7 @@ import { SdkError, CODES } from '../errors';
 /**
  * This module provides governance functionalities
  *
- * [More Details](https://www.kynno.io/docs/features/governance.html)
+ * [More Details](https://www.docs.kynno.dev/features/governance.html)
  *
  * @category Modules
  * @since v0.1

@@ -34,7 +34,7 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 /**
  * This module provides staking functionalities for validators and delegators
  *
- * [More Details](https://www.kynno.io/docs/features/stake.html)
+ * [More Details](https://www.docs.kynno.dev/features/stake.html)
  *
  * @category Modules
  * @since

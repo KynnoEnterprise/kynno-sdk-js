@@ -37,7 +37,7 @@ export interface StakingPool {
 /**
  * Gov params for Staking module
  *
- * [More Details](https://www.kynno.io/docs/concepts/gov-params.html#parameters-in-stake)
+ * [More Details](https://www.docs.kynno.dev/concepts/gov-params.html#parameters-in-stake)
  */
 export interface StakingParams {
     /** How many blocks will it take for receiving the tokens since unbonding */
